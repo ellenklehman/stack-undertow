@@ -8,13 +8,5 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
-  def index
-    @users = User.all.order(:name)
-  end
-
-  def new
-    @user = User.new
-  end
-
 
 end
