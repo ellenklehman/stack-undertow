@@ -28,6 +28,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 
 group :test do
+  gem 'better_errors'
   gem 'rspec-rails'
   gem 'shoulda-matchers'
   gem 'capybara'
@@ -35,5 +36,11 @@ end
 
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
-
 gem 'autoprefixer-rails'
+
+
+group :development do
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'quiet_assets'
+end
