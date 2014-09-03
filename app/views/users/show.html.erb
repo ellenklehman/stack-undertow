@@ -4,6 +4,13 @@
   <%= link_to "Edit My Account", edit_user_path(current_user) %>
 <br>
   <%= link_to "Add Question", new_user_question_path(current_user), id: "new_question_link", remote: true %>
-
 <% end %>
 
+
+<h2>Questions asked by <%= @user.name %></h2>
+
+<ul>
+  <% @user.questions.each do |question| %>
+    <li><%= link_to question.subject, user_question_path(@user, question) %></li>
+  <% end %>
+</ul>

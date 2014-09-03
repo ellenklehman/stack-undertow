@@ -10,7 +10,7 @@ class QuestionsController < ApplicationController
     if @question.save
       flash[:notice] = "Success!"
       respond_to do |format|
-        format.html { redirect_to user_question_path(@question) }
+        format.html { redirect_to user_path(current_user) }
         format.js
       end
     else

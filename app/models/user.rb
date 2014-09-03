@@ -9,4 +9,6 @@ class User < ActiveRecord::Base
   validates_uniqueness_of :email
   validates :email, length: { minimum: 6, maximum: 32 }
 
+  has_many :questions
+
 end
