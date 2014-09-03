@@ -6,6 +6,7 @@ class QuestionsController < ApplicationController
   end
 
   def create
+    @questions = Question.all
     @question = Question.new(question_params)
     if @question.save
       flash[:notice] = "Success!"
