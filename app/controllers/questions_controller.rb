@@ -19,6 +19,10 @@ class QuestionsController < ApplicationController
     end
   end
 
+  def show
+
+  end
+
 private
   def question_params
     params.require(:question).permit(:subject, :question, :user_id)
