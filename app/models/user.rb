@@ -9,12 +9,4 @@ class User < ActiveRecord::Base
   validates_uniqueness_of :email
   validates :email, length: { minimum: 6, maximum: 32 }
 
-
-private
-
-  def user_params
-    params.require(:user).permit(:name, :email,
-                                :password, :password_confirmation)
-  end
-
 end
