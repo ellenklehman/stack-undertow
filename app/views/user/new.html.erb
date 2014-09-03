@@ -1,25 +1,4 @@
-
 <h1>Create New Account</h1>
 
-<%= form_for(object, :class => 'form-horizontal') do |f| %>
-  <%= render('layouts/errors', :object => @user ) %>
-
-  <div class="form-group">
-    <%= f.label :email %>
-    <%= f.text_field :email %>
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :password %>
-    <%= f.password_field :password %>
-    <%= f.label :password_confirmation %>
-    <%= f.password_field :password_confirmation %>
-  </div>
-
-  <div class="form-group">
-    <%= f.submit "Create Account", :class => "btn btn-primary" %>
-  </div>
-<% end %>
-
+<%= render('layouts/errors', :object => @user ) %>
+<%= render('layouts/user_form', :object => @user ) %>
