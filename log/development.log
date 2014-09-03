@@ -335,3 +335,117 @@ Processing by UsersController#show as HTML
   [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
   Rendered users/show.html.erb within layouts/application (0.3ms)
 Completed 200 OK in 59ms (Views: 57.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2014-09-03 11:42:46 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered users/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 68ms (Views: 62.4ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-09-03 11:43:02 -0700
+Processing by ApplicationController#index as HTML
+  Rendered application/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 55ms (Views: 54.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-09-03 11:49:38 -0700
+Processing by ApplicationController#index as HTML
+  Rendered application/index.html.erb within layouts/application (0.0ms)
+Completed 500 Internal Server Error in 62ms
+
+ActiveRecord::RecordNotFound (Couldn't find User without an ID):
+  app/controllers/application_controller.rb:12:in `current_user'
+  app/views/layouts/application.html.erb:12:in `_app_views_layouts_application_html_erb___79435839272596994_70122309774120'
+
+
+  Rendered /Users/epicodus/.gem/ruby/2.1.0/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.6ms)
+  Rendered /Users/epicodus/.gem/ruby/2.1.0/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.7ms)
+  Rendered /Users/epicodus/.gem/ruby/2.1.0/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/epicodus/.gem/ruby/2.1.0/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (16.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-09-03 11:51:31 -0700
+Processing by ApplicationController#index as HTML
+  Rendered application/index.html.erb within layouts/application (0.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 63ms (Views: 61.1ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-09-03 11:53:20 -0700
+Processing by ApplicationController#index as HTML
+  Rendered application/index.html.erb within layouts/application (0.0ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+Completed 200 OK in 60ms (Views: 59.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-09-03 11:58:27 -0700
+Processing by ApplicationController#index as HTML
+  Rendered application/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 60ms (Views: 59.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-09-03 11:59:59 -0700
+Processing by ApplicationController#index as HTML
+  Rendered application/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 60ms (Views: 59.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2014-09-03 12:00:02 -0700
+Processing by UsersController#new as HTML
+  Rendered layouts/_errors.html.erb (0.0ms)
+  Rendered layouts/_user_form.html.erb (3.5ms)
+  Rendered users/new.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 70ms (Views: 67.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2014-09-03 12:00:03 -0700
+Processing by SessionsController#new as HTML
+  Rendered sessions/_form.html.erb (0.6ms)
+  Rendered sessions/new.html.erb within layouts/application (9.0ms)
+Completed 500 Internal Server Error in 11ms
+
+SyntaxError (/Users/epicodus/Code/undertow/app/views/sessions/_form.html.erb:1: syntax error, unexpected ',', expecting ')'
+...pend=  form_tag (sessions_path, :class => 'form-horizontal')...
+...                               ^
+/Users/epicodus/Code/undertow/app/views/sessions/_form.html.erb:1: syntax error, unexpected ')', expecting keyword_end
+...h, :class => 'form-horizontal') do @output_buffer.safe_appen...
+...                               ^
+/Users/epicodus/Code/undertow/app/views/sessions/_form.html.erb:18: syntax error, unexpected keyword_ensure, expecting end-of-input):
+  app/views/sessions/_form.html.erb:1: syntax error, unexpected ',', expecting ')'
+  app/views/sessions/_form.html.erb:1: syntax error, unexpected ')', expecting keyword_end
+  app/views/sessions/_form.html.erb:18: syntax error, unexpected keyword_ensure, expecting end-of-input
+  app/views/sessions/new.html.erb:3:in `_app_views_sessions_new_html_erb___3575279299777979125_70122311730660'
+
+
+  Rendered /Users/epicodus/.gem/ruby/2.1.0/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.4ms)
+  Rendered /Users/epicodus/.gem/ruby/2.1.0/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.9ms)
+  Rendered /Users/epicodus/.gem/ruby/2.1.0/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /Users/epicodus/.gem/ruby/2.1.0/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (9.6ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2014-09-03 12:00:03 -0700
+Processing by SessionsController#new as HTML
+  Rendered sessions/_form.html.erb (0.4ms)
+  Rendered sessions/new.html.erb within layouts/application (1.2ms)
+Completed 500 Internal Server Error in 3ms
+
+SyntaxError (/Users/epicodus/Code/undertow/app/views/sessions/_form.html.erb:1: syntax error, unexpected ',', expecting ')'
+...pend=  form_tag (sessions_path, :class => 'form-horizontal')...
+...                               ^
+/Users/epicodus/Code/undertow/app/views/sessions/_form.html.erb:1: syntax error, unexpected ')', expecting keyword_end
+...h, :class => 'form-horizontal') do @output_buffer.safe_appen...
+...                               ^
+/Users/epicodus/Code/undertow/app/views/sessions/_form.html.erb:18: syntax error, unexpected keyword_ensure, expecting end-of-input):
+  app/views/sessions/_form.html.erb:1: syntax error, unexpected ',', expecting ')'
+  app/views/sessions/_form.html.erb:1: syntax error, unexpected ')', expecting keyword_end
+  app/views/sessions/_form.html.erb:18: syntax error, unexpected keyword_ensure, expecting end-of-input
+  app/views/sessions/new.html.erb:3:in `_app_views_sessions_new_html_erb___3575279299777979125_70122309998740'
+
+
+  Rendered /Users/epicodus/.gem/ruby/2.1.0/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.4ms)
+  Rendered /Users/epicodus/.gem/ruby/2.1.0/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.9ms)
+  Rendered /Users/epicodus/.gem/ruby/2.1.0/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /Users/epicodus/.gem/ruby/2.1.0/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (9.6ms)
