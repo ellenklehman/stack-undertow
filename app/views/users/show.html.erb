@@ -2,4 +2,8 @@
 
 <% if @user == current_user %>
   <%= link_to "Edit My Account", edit_user_path(current_user) %>
+<br>
+  <%= link_to "Add Question", new_user_question_path(current_user), id: "new_question_link", remote: true %>
+
 <% end %>
+
