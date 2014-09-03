@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_filter :authorize, only: [:edit, :update]
 
   def index
     @users = User.all.order(:name)
@@ -32,5 +33,7 @@ private
   def user_params
     params.require(:user).permit(:name, :email, :password, :password_confirmation)
   end
+
+
 
 end
