@@ -9,4 +9,8 @@
 
 </p>
 
-<%= link_to "Edit this question", edit_user_question_path(@user, @question), id: "edit-button", remote: true, class: "btn btn-primary" %>
+<% if current_user != nil && current_user.id == @user.id %>
+  <%= link_to "Edit this question", edit_user_question_path(@user, @question), id: "edit-button", remote: true, class: "btn btn-primary" %>
+
+  <%= link_to "Delete this question", user_question_path(@user, @question), method: "delete", class: "btn btn-danger" %>
+<% end %>
