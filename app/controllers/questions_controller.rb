@@ -26,9 +26,26 @@ class QuestionsController < ApplicationController
     @user = User.find(params[:user_id])
   end
 
-  def index
-
+  def edit
+    @question = Question.find(params[:id])
+    @user = User.find(params[:user_id])
   end
+
+  def update
+    @question = Question.find(params[:id])
+    @user = User.find(params[:user_id])
+    if @question.update(question_params)
+      flash[:notice] = "Your question has been updated!"
+      respond_to do |format|
+        format.html { redirect_to user_question_path(@user, @question)}
+        format.js
+      end
+    else
+      flash[:alert] = "Update not successful."
+      render 'edit'
+    end
+  end
+
 
 private
   def question_params

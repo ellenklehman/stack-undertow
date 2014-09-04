@@ -10334,3 +10334,842 @@ Processing by QuestionsController#create as JS
   Rendered questions/_question.html.erb (0.4ms)
   Rendered questions/create.js.erb (1.3ms)
 Completed 200 OK in 5ms (Views: 2.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/users/5/questions/45" for 127.0.0.1 at 2014-09-04 09:44:14 -0700
+Processing by QuestionsController#show as HTML
+  Parameters: {"user_id"=>"5", "id"=>"45"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1mSELECT  "questions".* FROM "questions"  WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 45]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+  Rendered questions/show.html.erb within layouts/application (0.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+Completed 200 OK in 67ms (Views: 65.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/5/questions/45" for 127.0.0.1 at 2014-09-04 09:54:30 -0700
+Processing by QuestionsController#show as HTML
+  Parameters: {"user_id"=>"5", "id"=>"45"}
+  [1m[35mQuestion Load (0.1ms)[0m  SELECT  "questions".* FROM "questions"  WHERE "questions"."id" = $1 LIMIT 1  [["id", 45]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  Rendered questions/show.html.erb within layouts/application (0.6ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+Completed 200 OK in 120ms (Views: 110.1ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/users/5/questions/45" for 127.0.0.1 at 2014-09-04 09:57:20 -0700
+Processing by QuestionsController#show as HTML
+  Parameters: {"user_id"=>"5", "id"=>"45"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1mSELECT  "questions".* FROM "questions"  WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 45]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+  Rendered questions/show.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+Completed 200 OK in 63ms (Views: 61.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/5/questions/45" for 127.0.0.1 at 2014-09-04 10:00:52 -0700
+Processing by QuestionsController#show as HTML
+  Parameters: {"user_id"=>"5", "id"=>"45"}
+  [1m[35mQuestion Load (0.3ms)[0m  SELECT  "questions".* FROM "questions"  WHERE "questions"."id" = $1 LIMIT 1  [["id", 45]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  Rendered questions/show.html.erb within layouts/application (0.2ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+Completed 200 OK in 80ms (Views: 78.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/5/questions/45/edit" for 127.0.0.1 at 2014-09-04 10:00:55 -0700
+Processing by QuestionsController#edit as JS
+  Parameters: {"user_id"=>"5", "id"=>"45"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1mSELECT  "questions".* FROM "questions"  WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 45]]
+  Rendered questions/_question_form.html.erb (10.1ms)
+  Rendered questions/edit.js.erb (13.2ms)
+Completed 500 Internal Server Error in 17ms
+
+NoMethodError - undefined method `question_path' for #<#<Class:0x007f8116ad95c8>:0x007f81138b5e70>:
+  actionpack (4.1.5) lib/action_dispatch/routing/polymorphic_routes.rb:142:in `polymorphic_url'
+  actionpack (4.1.5) lib/action_dispatch/routing/polymorphic_routes.rb:148:in `polymorphic_path'
+  actionview (4.1.5) lib/action_view/helpers/form_helper.rb:452:in `apply_form_for_options!'
+  actionview (4.1.5) lib/action_view/helpers/form_helper.rb:425:in `form_for'
+   () Users/epicodus/Code/undertow/app/views/questions/_question_form.html.erb:1:in `_app_views_questions__question_form_html_erb___179595411926174379_70096191386340'
+  actionview (4.1.5) lib/action_view/template.rb:145:in `block in render'
+  activesupport (4.1.5) lib/active_support/notifications.rb:161:in `instrument'
+  actionview (4.1.5) lib/action_view/template.rb:339:in `instrument'
+  actionview (4.1.5) lib/action_view/template.rb:143:in `render'
+  actionview (4.1.5) lib/action_view/renderer/partial_renderer.rb:306:in `render_partial'
+  actionview (4.1.5) lib/action_view/renderer/partial_renderer.rb:279:in `block in render'
+  actionview (4.1.5) lib/action_view/renderer/abstract_renderer.rb:38:in `block in instrument'
+  activesupport (4.1.5) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.1.5) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.1.5) lib/active_support/notifications.rb:159:in `instrument'
+  actionview (4.1.5) lib/action_view/renderer/abstract_renderer.rb:38:in `instrument'
+  actionview (4.1.5) lib/action_view/renderer/partial_renderer.rb:278:in `render'
+  actionview (4.1.5) lib/action_view/renderer/renderer.rb:47:in `render_partial'
+  actionview (4.1.5) lib/action_view/helpers/rendering_helper.rb:35:in `render'
+   () Users/epicodus/Code/undertow/app/views/questions/edit.js.erb:2:in `_app_views_questions_edit_js_erb__2406373188559702874_70096177690600'
+  actionview (4.1.5) lib/action_view/template.rb:145:in `block in render'
+  activesupport (4.1.5) lib/active_support/notifications.rb:161:in `instrument'
+  actionview (4.1.5) lib/action_view/template.rb:339:in `instrument'
+  actionview (4.1.5) lib/action_view/template.rb:143:in `render'
+  actionview (4.1.5) lib/action_view/renderer/template_renderer.rb:55:in `block (2 levels) in render_template'
+  actionview (4.1.5) lib/action_view/renderer/abstract_renderer.rb:38:in `block in instrument'
+  activesupport (4.1.5) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.1.5) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.1.5) lib/active_support/notifications.rb:159:in `instrument'
+  actionview (4.1.5) lib/action_view/renderer/abstract_renderer.rb:38:in `instrument'
+  actionview (4.1.5) lib/action_view/renderer/template_renderer.rb:54:in `block in render_template'
+  actionview (4.1.5) lib/action_view/renderer/template_renderer.rb:62:in `render_with_layout'
+  actionview (4.1.5) lib/action_view/renderer/template_renderer.rb:53:in `render_template'
+  actionview (4.1.5) lib/action_view/renderer/template_renderer.rb:17:in `render'
+  actionview (4.1.5) lib/action_view/renderer/renderer.rb:42:in `render_template'
+  actionview (4.1.5) lib/action_view/renderer/renderer.rb:23:in `render'
+  actionview (4.1.5) lib/action_view/rendering.rb:99:in `_render_template'
+  actionpack (4.1.5) lib/action_controller/metal/streaming.rb:217:in `_render_template'
+  actionview (4.1.5) lib/action_view/rendering.rb:82:in `render_to_body'
+  actionpack (4.1.5) lib/action_controller/metal/rendering.rb:32:in `render_to_body'
+  actionpack (4.1.5) lib/action_controller/metal/renderers.rb:32:in `render_to_body'
+  actionpack (4.1.5) lib/abstract_controller/rendering.rb:25:in `render'
+  actionpack (4.1.5) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.1.5) lib/action_controller/metal/instrumentation.rb:41:in `block (2 levels) in render'
+  activesupport (4.1.5) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+   () Users/epicodus/.rubies/ruby-2.1.0/lib/ruby/2.1.0/benchmark.rb:294:in `realtime'
+  activesupport (4.1.5) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.1.5) lib/action_controller/metal/instrumentation.rb:41:in `block in render'
+  actionpack (4.1.5) lib/action_controller/metal/instrumentation.rb:84:in `cleanup_view_runtime'
+  activerecord (4.1.5) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.1.5) lib/action_controller/metal/instrumentation.rb:40:in `render'
+  actionpack (4.1.5) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (4.1.5) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (4.1.5) lib/abstract_controller/base.rb:189:in `process_action'
+  actionpack (4.1.5) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.1.5) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.1.5) lib/active_support/callbacks.rb:113:in `call'
+  activesupport (4.1.5) lib/active_support/callbacks.rb:229:in `block in halting'
+  activesupport (4.1.5) lib/active_support/callbacks.rb:229:in `block in halting'
+  activesupport (4.1.5) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.5) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.5) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.5) lib/active_support/callbacks.rb:86:in `run_callbacks'
+  actionpack (4.1.5) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.1.5) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.1.5) lib/action_controller/metal/instrumentation.rb:31:in `block in process_action'
+  activesupport (4.1.5) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.1.5) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.1.5) lib/active_support/notifications.rb:159:in `instrument'
+  actionpack (4.1.5) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.1.5) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.1.5) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.1.5) lib/abstract_controller/base.rb:136:in `process'
+  actionview (4.1.5) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.1.5) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.1.5) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.1.5) lib/action_controller/metal.rb:232:in `block in action'
+  actionpack (4.1.5) lib/action_dispatch/routing/route_set.rb:82:in `dispatch'
+  actionpack (4.1.5) lib/action_dispatch/routing/route_set.rb:50:in `call'
+  actionpack (4.1.5) lib/action_dispatch/journey/router.rb:71:in `block in call'
+  actionpack (4.1.5) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.1.5) lib/action_dispatch/routing/route_set.rb:678:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/flash.rb:254:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.1.5) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.1.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:621:in `call'
+  activerecord (4.1.5) lib/active_record/migration.rb:380:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.5) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.5) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  better_errors (2.0.0) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (2.0.0) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (2.0.0) lib/better_errors/middleware.rb:57:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.5) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.0.3) lib/quiet_assets.rb:23:in `call_with_quiet_assets'
+  actionpack (4.1.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.5) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.5) lib/rails/engine.rb:514:in `call'
+  railties (4.1.5) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+   () Users/epicodus/.rubies/ruby-2.1.0/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+   () Users/epicodus/.rubies/ruby-2.1.0/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+   () Users/epicodus/.rubies/ruby-2.1.0/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+
+Started GET "/users/5/questions/45/edit" for 127.0.0.1 at 2014-09-04 10:00:59 -0700
+Processing by QuestionsController#edit as JS
+  Parameters: {"user_id"=>"5", "id"=>"45"}
+  [1m[35mQuestion Load (0.1ms)[0m  SELECT  "questions".* FROM "questions"  WHERE "questions"."id" = $1 LIMIT 1  [["id", 45]]
+  Rendered questions/_question_form.html.erb (9.4ms)
+  Rendered questions/edit.js.erb (11.7ms)
+Completed 500 Internal Server Error in 15ms
+
+NoMethodError - undefined method `question_path' for #<#<Class:0x007f8116ad95c8>:0x007f811576b8b0>:
+  actionpack (4.1.5) lib/action_dispatch/routing/polymorphic_routes.rb:142:in `polymorphic_url'
+  actionpack (4.1.5) lib/action_dispatch/routing/polymorphic_routes.rb:148:in `polymorphic_path'
+  actionview (4.1.5) lib/action_view/helpers/form_helper.rb:452:in `apply_form_for_options!'
+  actionview (4.1.5) lib/action_view/helpers/form_helper.rb:425:in `form_for'
+   () Users/epicodus/Code/undertow/app/views/questions/_question_form.html.erb:1:in `_app_views_questions__question_form_html_erb___179595411926174379_70096191386340'
+  actionview (4.1.5) lib/action_view/template.rb:145:in `block in render'
+  activesupport (4.1.5) lib/active_support/notifications.rb:161:in `instrument'
+  actionview (4.1.5) lib/action_view/template.rb:339:in `instrument'
+  actionview (4.1.5) lib/action_view/template.rb:143:in `render'
+  actionview (4.1.5) lib/action_view/renderer/partial_renderer.rb:306:in `render_partial'
+  actionview (4.1.5) lib/action_view/renderer/partial_renderer.rb:279:in `block in render'
+  actionview (4.1.5) lib/action_view/renderer/abstract_renderer.rb:38:in `block in instrument'
+  activesupport (4.1.5) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.1.5) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.1.5) lib/active_support/notifications.rb:159:in `instrument'
+  actionview (4.1.5) lib/action_view/renderer/abstract_renderer.rb:38:in `instrument'
+  actionview (4.1.5) lib/action_view/renderer/partial_renderer.rb:278:in `render'
+  actionview (4.1.5) lib/action_view/renderer/renderer.rb:47:in `render_partial'
+  actionview (4.1.5) lib/action_view/helpers/rendering_helper.rb:35:in `render'
+   () Users/epicodus/Code/undertow/app/views/questions/edit.js.erb:2:in `_app_views_questions_edit_js_erb__2406373188559702874_70096177690600'
+  actionview (4.1.5) lib/action_view/template.rb:145:in `block in render'
+  activesupport (4.1.5) lib/active_support/notifications.rb:161:in `instrument'
+  actionview (4.1.5) lib/action_view/template.rb:339:in `instrument'
+  actionview (4.1.5) lib/action_view/template.rb:143:in `render'
+  actionview (4.1.5) lib/action_view/renderer/template_renderer.rb:55:in `block (2 levels) in render_template'
+  actionview (4.1.5) lib/action_view/renderer/abstract_renderer.rb:38:in `block in instrument'
+  activesupport (4.1.5) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.1.5) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.1.5) lib/active_support/notifications.rb:159:in `instrument'
+  actionview (4.1.5) lib/action_view/renderer/abstract_renderer.rb:38:in `instrument'
+  actionview (4.1.5) lib/action_view/renderer/template_renderer.rb:54:in `block in render_template'
+  actionview (4.1.5) lib/action_view/renderer/template_renderer.rb:62:in `render_with_layout'
+  actionview (4.1.5) lib/action_view/renderer/template_renderer.rb:53:in `render_template'
+  actionview (4.1.5) lib/action_view/renderer/template_renderer.rb:17:in `render'
+  actionview (4.1.5) lib/action_view/renderer/renderer.rb:42:in `render_template'
+  actionview (4.1.5) lib/action_view/renderer/renderer.rb:23:in `render'
+  actionview (4.1.5) lib/action_view/rendering.rb:99:in `_render_template'
+  actionpack (4.1.5) lib/action_controller/metal/streaming.rb:217:in `_render_template'
+  actionview (4.1.5) lib/action_view/rendering.rb:82:in `render_to_body'
+  actionpack (4.1.5) lib/action_controller/metal/rendering.rb:32:in `render_to_body'
+  actionpack (4.1.5) lib/action_controller/metal/renderers.rb:32:in `render_to_body'
+  actionpack (4.1.5) lib/abstract_controller/rendering.rb:25:in `render'
+  actionpack (4.1.5) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.1.5) lib/action_controller/metal/instrumentation.rb:41:in `block (2 levels) in render'
+  activesupport (4.1.5) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+   () Users/epicodus/.rubies/ruby-2.1.0/lib/ruby/2.1.0/benchmark.rb:294:in `realtime'
+  activesupport (4.1.5) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.1.5) lib/action_controller/metal/instrumentation.rb:41:in `block in render'
+  actionpack (4.1.5) lib/action_controller/metal/instrumentation.rb:84:in `cleanup_view_runtime'
+  activerecord (4.1.5) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.1.5) lib/action_controller/metal/instrumentation.rb:40:in `render'
+  actionpack (4.1.5) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (4.1.5) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (4.1.5) lib/abstract_controller/base.rb:189:in `process_action'
+  actionpack (4.1.5) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.1.5) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.1.5) lib/active_support/callbacks.rb:113:in `call'
+  activesupport (4.1.5) lib/active_support/callbacks.rb:229:in `block in halting'
+  activesupport (4.1.5) lib/active_support/callbacks.rb:229:in `block in halting'
+  activesupport (4.1.5) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.5) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.5) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.5) lib/active_support/callbacks.rb:86:in `run_callbacks'
+  actionpack (4.1.5) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.1.5) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.1.5) lib/action_controller/metal/instrumentation.rb:31:in `block in process_action'
+  activesupport (4.1.5) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.1.5) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.1.5) lib/active_support/notifications.rb:159:in `instrument'
+  actionpack (4.1.5) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.1.5) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.1.5) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.1.5) lib/abstract_controller/base.rb:136:in `process'
+  actionview (4.1.5) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.1.5) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.1.5) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.1.5) lib/action_controller/metal.rb:232:in `block in action'
+  actionpack (4.1.5) lib/action_dispatch/routing/route_set.rb:82:in `dispatch'
+  actionpack (4.1.5) lib/action_dispatch/routing/route_set.rb:50:in `call'
+  actionpack (4.1.5) lib/action_dispatch/journey/router.rb:71:in `block in call'
+  actionpack (4.1.5) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.1.5) lib/action_dispatch/routing/route_set.rb:678:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/flash.rb:254:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.1.5) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.1.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:621:in `call'
+  activerecord (4.1.5) lib/active_record/migration.rb:380:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.5) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.5) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  better_errors (2.0.0) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (2.0.0) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (2.0.0) lib/better_errors/middleware.rb:57:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.5) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.0.3) lib/quiet_assets.rb:23:in `call_with_quiet_assets'
+  actionpack (4.1.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.5) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.5) lib/rails/engine.rb:514:in `call'
+  railties (4.1.5) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+   () Users/epicodus/.rubies/ruby-2.1.0/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+   () Users/epicodus/.rubies/ruby-2.1.0/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+   () Users/epicodus/.rubies/ruby-2.1.0/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+
+Started GET "/users/5/questions/45" for 127.0.0.1 at 2014-09-04 10:01:18 -0700
+Processing by QuestionsController#show as HTML
+  Parameters: {"user_id"=>"5", "id"=>"45"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1mSELECT  "questions".* FROM "questions"  WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 45]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+  Rendered questions/show.html.erb within layouts/application (0.3ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+Completed 200 OK in 58ms (Views: 55.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/5/questions/45/edit" for 127.0.0.1 at 2014-09-04 10:01:28 -0700
+Processing by QuestionsController#edit as JS
+  Parameters: {"user_id"=>"5", "id"=>"45"}
+  [1m[35mQuestion Load (0.2ms)[0m  SELECT  "questions".* FROM "questions"  WHERE "questions"."id" = $1 LIMIT 1  [["id", 45]]
+  Rendered questions/_question_form.html.erb (8.9ms)
+  Rendered questions/edit.js.erb (10.9ms)
+Completed 500 Internal Server Error in 14ms
+
+NoMethodError - undefined method `question_path' for #<#<Class:0x007f8116ad95c8>:0x007f8114e4d9b8>:
+  actionpack (4.1.5) lib/action_dispatch/routing/polymorphic_routes.rb:142:in `polymorphic_url'
+  actionpack (4.1.5) lib/action_dispatch/routing/polymorphic_routes.rb:148:in `polymorphic_path'
+  actionview (4.1.5) lib/action_view/helpers/form_helper.rb:452:in `apply_form_for_options!'
+  actionview (4.1.5) lib/action_view/helpers/form_helper.rb:425:in `form_for'
+   () Users/epicodus/Code/undertow/app/views/questions/_question_form.html.erb:1:in `_app_views_questions__question_form_html_erb___179595411926174379_70096191386340'
+  actionview (4.1.5) lib/action_view/template.rb:145:in `block in render'
+  activesupport (4.1.5) lib/active_support/notifications.rb:161:in `instrument'
+  actionview (4.1.5) lib/action_view/template.rb:339:in `instrument'
+  actionview (4.1.5) lib/action_view/template.rb:143:in `render'
+  actionview (4.1.5) lib/action_view/renderer/partial_renderer.rb:306:in `render_partial'
+  actionview (4.1.5) lib/action_view/renderer/partial_renderer.rb:279:in `block in render'
+  actionview (4.1.5) lib/action_view/renderer/abstract_renderer.rb:38:in `block in instrument'
+  activesupport (4.1.5) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.1.5) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.1.5) lib/active_support/notifications.rb:159:in `instrument'
+  actionview (4.1.5) lib/action_view/renderer/abstract_renderer.rb:38:in `instrument'
+  actionview (4.1.5) lib/action_view/renderer/partial_renderer.rb:278:in `render'
+  actionview (4.1.5) lib/action_view/renderer/renderer.rb:47:in `render_partial'
+  actionview (4.1.5) lib/action_view/helpers/rendering_helper.rb:35:in `render'
+   () Users/epicodus/Code/undertow/app/views/questions/edit.js.erb:2:in `_app_views_questions_edit_js_erb__2406373188559702874_70096177690600'
+  actionview (4.1.5) lib/action_view/template.rb:145:in `block in render'
+  activesupport (4.1.5) lib/active_support/notifications.rb:161:in `instrument'
+  actionview (4.1.5) lib/action_view/template.rb:339:in `instrument'
+  actionview (4.1.5) lib/action_view/template.rb:143:in `render'
+  actionview (4.1.5) lib/action_view/renderer/template_renderer.rb:55:in `block (2 levels) in render_template'
+  actionview (4.1.5) lib/action_view/renderer/abstract_renderer.rb:38:in `block in instrument'
+  activesupport (4.1.5) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.1.5) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.1.5) lib/active_support/notifications.rb:159:in `instrument'
+  actionview (4.1.5) lib/action_view/renderer/abstract_renderer.rb:38:in `instrument'
+  actionview (4.1.5) lib/action_view/renderer/template_renderer.rb:54:in `block in render_template'
+  actionview (4.1.5) lib/action_view/renderer/template_renderer.rb:62:in `render_with_layout'
+  actionview (4.1.5) lib/action_view/renderer/template_renderer.rb:53:in `render_template'
+  actionview (4.1.5) lib/action_view/renderer/template_renderer.rb:17:in `render'
+  actionview (4.1.5) lib/action_view/renderer/renderer.rb:42:in `render_template'
+  actionview (4.1.5) lib/action_view/renderer/renderer.rb:23:in `render'
+  actionview (4.1.5) lib/action_view/rendering.rb:99:in `_render_template'
+  actionpack (4.1.5) lib/action_controller/metal/streaming.rb:217:in `_render_template'
+  actionview (4.1.5) lib/action_view/rendering.rb:82:in `render_to_body'
+  actionpack (4.1.5) lib/action_controller/metal/rendering.rb:32:in `render_to_body'
+  actionpack (4.1.5) lib/action_controller/metal/renderers.rb:32:in `render_to_body'
+  actionpack (4.1.5) lib/abstract_controller/rendering.rb:25:in `render'
+  actionpack (4.1.5) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.1.5) lib/action_controller/metal/instrumentation.rb:41:in `block (2 levels) in render'
+  activesupport (4.1.5) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+   () Users/epicodus/.rubies/ruby-2.1.0/lib/ruby/2.1.0/benchmark.rb:294:in `realtime'
+  activesupport (4.1.5) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.1.5) lib/action_controller/metal/instrumentation.rb:41:in `block in render'
+  actionpack (4.1.5) lib/action_controller/metal/instrumentation.rb:84:in `cleanup_view_runtime'
+  activerecord (4.1.5) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.1.5) lib/action_controller/metal/instrumentation.rb:40:in `render'
+  actionpack (4.1.5) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (4.1.5) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (4.1.5) lib/abstract_controller/base.rb:189:in `process_action'
+  actionpack (4.1.5) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.1.5) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.1.5) lib/active_support/callbacks.rb:113:in `call'
+  activesupport (4.1.5) lib/active_support/callbacks.rb:229:in `block in halting'
+  activesupport (4.1.5) lib/active_support/callbacks.rb:229:in `block in halting'
+  activesupport (4.1.5) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.5) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.5) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.5) lib/active_support/callbacks.rb:86:in `run_callbacks'
+  actionpack (4.1.5) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.1.5) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.1.5) lib/action_controller/metal/instrumentation.rb:31:in `block in process_action'
+  activesupport (4.1.5) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.1.5) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.1.5) lib/active_support/notifications.rb:159:in `instrument'
+  actionpack (4.1.5) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.1.5) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.1.5) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.1.5) lib/abstract_controller/base.rb:136:in `process'
+  actionview (4.1.5) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.1.5) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.1.5) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.1.5) lib/action_controller/metal.rb:232:in `block in action'
+  actionpack (4.1.5) lib/action_dispatch/routing/route_set.rb:82:in `dispatch'
+  actionpack (4.1.5) lib/action_dispatch/routing/route_set.rb:50:in `call'
+  actionpack (4.1.5) lib/action_dispatch/journey/router.rb:71:in `block in call'
+  actionpack (4.1.5) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.1.5) lib/action_dispatch/routing/route_set.rb:678:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/flash.rb:254:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.1.5) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.1.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:621:in `call'
+  activerecord (4.1.5) lib/active_record/migration.rb:380:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.5) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.5) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  better_errors (2.0.0) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (2.0.0) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (2.0.0) lib/better_errors/middleware.rb:57:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.5) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.0.3) lib/quiet_assets.rb:23:in `call_with_quiet_assets'
+  actionpack (4.1.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.5) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.5) lib/rails/engine.rb:514:in `call'
+  railties (4.1.5) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+   () Users/epicodus/.rubies/ruby-2.1.0/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+   () Users/epicodus/.rubies/ruby-2.1.0/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+   () Users/epicodus/.rubies/ruby-2.1.0/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+
+Started GET "/users/5/questions/45" for 127.0.0.1 at 2014-09-04 10:05:48 -0700
+Processing by QuestionsController#show as HTML
+  Parameters: {"user_id"=>"5", "id"=>"45"}
+  [1m[36mQuestion Load (0.1ms)[0m  [1mSELECT  "questions".* FROM "questions"  WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 45]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+  Rendered questions/show.html.erb within layouts/application (0.3ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+Completed 200 OK in 64ms (Views: 54.1ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/users/5/questions/45/edit" for 127.0.0.1 at 2014-09-04 10:05:50 -0700
+Processing by QuestionsController#edit as JS
+  Parameters: {"user_id"=>"5", "id"=>"45"}
+  [1m[35mQuestion Load (0.1ms)[0m  SELECT  "questions".* FROM "questions"  WHERE "questions"."id" = $1 LIMIT 1  [["id", 45]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+  Rendered questions/_question_form.html.erb (2.1ms)
+  Rendered questions/edit.js.erb (4.2ms)
+Completed 200 OK in 8ms (Views: 6.7ms | ActiveRecord: 0.4ms)
+
+
+Started PATCH "/users/5/questions/45" for 127.0.0.1 at 2014-09-04 10:06:10 -0700
+Processing by QuestionsController#update as JS
+  Parameters: {"utf8"=>"✓", "question"=>{"subject"=>"First question", "question"=>"This is a real question.", "user_id"=>"5"}, "commit"=>"Update Question", "user_id"=>"5", "id"=>"45"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1mSELECT  "questions".* FROM "questions"  WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 45]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "questions" SET "question" = $1, "updated_at" = $2 WHERE "questions"."id" = 45  [["question", "This is a real question."], ["updated_at", "2014-09-04 17:06:10.873051"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+Completed 500 Internal Server Error in 5ms
+
+ActionView::MissingTemplate - Missing template questions/update, application/update with {:locale=>[:en], :formats=>[:js, :html], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :jbuilder, :coffee]}. Searched in:
+  * "/Users/epicodus/Code/undertow/app/views"
+:
+  actionview (4.1.5) lib/action_view/path_set.rb:46:in `find'
+  actionview (4.1.5) lib/action_view/lookup_context.rb:124:in `find'
+  actionview (4.1.5) lib/action_view/renderer/abstract_renderer.rb:18:in `find_template'
+  actionview (4.1.5) lib/action_view/renderer/template_renderer.rb:41:in `determine_template'
+  actionview (4.1.5) lib/action_view/renderer/template_renderer.rb:8:in `render'
+  actionview (4.1.5) lib/action_view/renderer/renderer.rb:42:in `render_template'
+  actionview (4.1.5) lib/action_view/renderer/renderer.rb:23:in `render'
+  actionview (4.1.5) lib/action_view/rendering.rb:99:in `_render_template'
+  actionpack (4.1.5) lib/action_controller/metal/streaming.rb:217:in `_render_template'
+  actionview (4.1.5) lib/action_view/rendering.rb:82:in `render_to_body'
+  actionpack (4.1.5) lib/action_controller/metal/rendering.rb:32:in `render_to_body'
+  actionpack (4.1.5) lib/action_controller/metal/renderers.rb:32:in `render_to_body'
+  actionpack (4.1.5) lib/abstract_controller/rendering.rb:25:in `render'
+  actionpack (4.1.5) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.1.5) lib/action_controller/metal/instrumentation.rb:41:in `block (2 levels) in render'
+  activesupport (4.1.5) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+   () Users/epicodus/.rubies/ruby-2.1.0/lib/ruby/2.1.0/benchmark.rb:294:in `realtime'
+  activesupport (4.1.5) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.1.5) lib/action_controller/metal/instrumentation.rb:41:in `block in render'
+  actionpack (4.1.5) lib/action_controller/metal/instrumentation.rb:84:in `cleanup_view_runtime'
+  activerecord (4.1.5) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.1.5) lib/action_controller/metal/instrumentation.rb:40:in `render'
+  actionpack (4.1.5) lib/action_controller/metal/mime_responds.rb:258:in `respond_to'
+   () Users/epicodus/Code/undertow/app/controllers/questions_controller.rb:39:in `update'
+  actionpack (4.1.5) lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+  actionpack (4.1.5) lib/abstract_controller/base.rb:189:in `process_action'
+  actionpack (4.1.5) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.1.5) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.1.5) lib/active_support/callbacks.rb:113:in `call'
+  activesupport (4.1.5) lib/active_support/callbacks.rb:229:in `block in halting'
+  activesupport (4.1.5) lib/active_support/callbacks.rb:229:in `block in halting'
+  activesupport (4.1.5) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.5) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.5) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.5) lib/active_support/callbacks.rb:86:in `run_callbacks'
+  actionpack (4.1.5) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.1.5) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.1.5) lib/action_controller/metal/instrumentation.rb:31:in `block in process_action'
+  activesupport (4.1.5) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.1.5) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.1.5) lib/active_support/notifications.rb:159:in `instrument'
+  actionpack (4.1.5) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.1.5) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.1.5) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.1.5) lib/abstract_controller/base.rb:136:in `process'
+  actionview (4.1.5) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.1.5) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.1.5) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.1.5) lib/action_controller/metal.rb:232:in `block in action'
+  actionpack (4.1.5) lib/action_dispatch/routing/route_set.rb:82:in `dispatch'
+  actionpack (4.1.5) lib/action_dispatch/routing/route_set.rb:50:in `call'
+  actionpack (4.1.5) lib/action_dispatch/journey/router.rb:71:in `block in call'
+  actionpack (4.1.5) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.1.5) lib/action_dispatch/routing/route_set.rb:678:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:35:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/flash.rb:254:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.1.5) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.1.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:621:in `call'
+  activerecord (4.1.5) lib/active_record/migration.rb:380:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.5) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.5) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  better_errors (2.0.0) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (2.0.0) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (2.0.0) lib/better_errors/middleware.rb:57:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.5) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.0.3) lib/quiet_assets.rb:23:in `call_with_quiet_assets'
+  actionpack (4.1.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.5) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.5) lib/rails/engine.rb:514:in `call'
+  railties (4.1.5) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+   () Users/epicodus/.rubies/ruby-2.1.0/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+   () Users/epicodus/.rubies/ruby-2.1.0/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+   () Users/epicodus/.rubies/ruby-2.1.0/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+
+Started GET "/users/5/questions/45" for 127.0.0.1 at 2014-09-04 10:11:02 -0700
+Processing by QuestionsController#show as HTML
+  Parameters: {"user_id"=>"5", "id"=>"45"}
+  [1m[35mQuestion Load (0.1ms)[0m  SELECT  "questions".* FROM "questions"  WHERE "questions"."id" = $1 LIMIT 1  [["id", 45]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  Rendered questions/show.html.erb within layouts/application (0.5ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+Completed 200 OK in 69ms (Views: 67.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/5/questions/45/edit" for 127.0.0.1 at 2014-09-04 10:11:14 -0700
+Processing by QuestionsController#edit as JS
+  Parameters: {"user_id"=>"5", "id"=>"45"}
+  [1m[36mQuestion Load (0.1ms)[0m  [1mSELECT  "questions".* FROM "questions"  WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 45]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  Rendered questions/_question_form.html.erb (1.8ms)
+  Rendered questions/edit.js.erb (4.5ms)
+Completed 200 OK in 9ms (Views: 7.4ms | ActiveRecord: 0.3ms)
+
+
+Started PATCH "/users/5/questions/45" for 127.0.0.1 at 2014-09-04 10:11:20 -0700
+Processing by QuestionsController#update as JS
+  Parameters: {"utf8"=>"✓", "question"=>{"subject"=>"First question", "question"=>"This is not a real question.", "user_id"=>"5"}, "commit"=>"Update Question", "user_id"=>"5", "id"=>"45"}
+  [1m[35mQuestion Load (0.1ms)[0m  SELECT  "questions".* FROM "questions"  WHERE "questions"."id" = $1 LIMIT 1  [["id", 45]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "questions" SET "question" = $1, "updated_at" = $2 WHERE "questions"."id" = 45[0m  [["question", "This is not a real question."], ["updated_at", "2014-09-04 17:11:20.755172"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  Rendered questions/update.js.erb (0.3ms)
+Completed 200 OK in 5ms (Views: 1.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/users/5/questions/45" for 127.0.0.1 at 2014-09-04 10:12:51 -0700
+Processing by QuestionsController#show as HTML
+  Parameters: {"user_id"=>"5", "id"=>"45"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1mSELECT  "questions".* FROM "questions"  WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 45]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+  Rendered questions/show.html.erb within layouts/application (0.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+Completed 200 OK in 68ms (Views: 65.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/5/questions/45/edit" for 127.0.0.1 at 2014-09-04 10:12:58 -0700
+Processing by QuestionsController#edit as JS
+  Parameters: {"user_id"=>"5", "id"=>"45"}
+  [1m[35mQuestion Load (0.1ms)[0m  SELECT  "questions".* FROM "questions"  WHERE "questions"."id" = $1 LIMIT 1  [["id", 45]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+  Rendered questions/_question_form.html.erb (1.7ms)
+  Rendered questions/edit.js.erb (3.9ms)
+Completed 200 OK in 8ms (Views: 6.3ms | ActiveRecord: 0.3ms)
+
+
+Started PATCH "/users/5/questions/45" for 127.0.0.1 at 2014-09-04 10:13:06 -0700
+Processing by QuestionsController#update as JS
+  Parameters: {"utf8"=>"✓", "question"=>{"subject"=>"First question", "question"=>"Is this a question?", "user_id"=>"5"}, "commit"=>"Update Question", "user_id"=>"5", "id"=>"45"}
+  [1m[36mQuestion Load (0.1ms)[0m  [1mSELECT  "questions".* FROM "questions"  WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 45]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  UPDATE "questions" SET "question" = $1, "updated_at" = $2 WHERE "questions"."id" = 45  [["question", "Is this a question?"], ["updated_at", "2014-09-04 17:13:06.854291"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  Rendered questions/update.js.erb (0.3ms)
+Completed 200 OK in 5ms (Views: 1.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/users/5/questions/45" for 127.0.0.1 at 2014-09-04 10:14:06 -0700
+Processing by QuestionsController#show as HTML
+  Parameters: {"user_id"=>"5", "id"=>"45"}
+  [1m[35mQuestion Load (0.2ms)[0m  SELECT  "questions".* FROM "questions"  WHERE "questions"."id" = $1 LIMIT 1  [["id", 45]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  Rendered questions/show.html.erb within layouts/application (0.2ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+Completed 200 OK in 69ms (Views: 67.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/5/questions/45/edit" for 127.0.0.1 at 2014-09-04 10:14:13 -0700
+Processing by QuestionsController#edit as JS
+  Parameters: {"user_id"=>"5", "id"=>"45"}
+  [1m[36mQuestion Load (0.1ms)[0m  [1mSELECT  "questions".* FROM "questions"  WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 45]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  Rendered questions/_question_form.html.erb (1.7ms)
+  Rendered questions/edit.js.erb (3.9ms)
+Completed 200 OK in 8ms (Views: 6.4ms | ActiveRecord: 0.3ms)
+
+
+Started PATCH "/users/5/questions/45" for 127.0.0.1 at 2014-09-04 10:14:19 -0700
+Processing by QuestionsController#update as JS
+  Parameters: {"utf8"=>"✓", "question"=>{"subject"=>"First question", "question"=>"Que?", "user_id"=>"5"}, "commit"=>"Update Question", "user_id"=>"5", "id"=>"45"}
+  [1m[35mQuestion Load (0.2ms)[0m  SELECT  "questions".* FROM "questions"  WHERE "questions"."id" = $1 LIMIT 1  [["id", 45]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mUPDATE "questions" SET "question" = $1, "updated_at" = $2 WHERE "questions"."id" = 45[0m  [["question", "Que?"], ["updated_at", "2014-09-04 17:14:19.620773"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  Rendered questions/update.js.erb (0.4ms)
+Completed 200 OK in 5ms (Views: 1.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users/5/questions/45/edit" for 127.0.0.1 at 2014-09-04 10:14:29 -0700
+Processing by QuestionsController#edit as JS
+  Parameters: {"user_id"=>"5", "id"=>"45"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1mSELECT  "questions".* FROM "questions"  WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 45]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  Rendered questions/_question_form.html.erb (1.8ms)
+  Rendered questions/edit.js.erb (3.9ms)
+Completed 200 OK in 9ms (Views: 6.8ms | ActiveRecord: 0.5ms)
+
+
+Started PATCH "/users/5/questions/45" for 127.0.0.1 at 2014-09-04 10:14:45 -0700
+Processing by QuestionsController#update as JS
+  Parameters: {"utf8"=>"✓", "question"=>{"subject"=>"Yet another question", "question"=>"Que?", "user_id"=>"5"}, "commit"=>"Update Question", "user_id"=>"5", "id"=>"45"}
+  [1m[35mQuestion Load (0.1ms)[0m  SELECT  "questions".* FROM "questions"  WHERE "questions"."id" = $1 LIMIT 1  [["id", 45]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mUPDATE "questions" SET "subject" = $1, "updated_at" = $2 WHERE "questions"."id" = 45[0m  [["subject", "Yet another question"], ["updated_at", "2014-09-04 17:14:45.426171"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  Rendered questions/update.js.erb (0.1ms)
+Completed 200 OK in 4ms (Views: 1.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users/5/questions/45" for 127.0.0.1 at 2014-09-04 10:16:13 -0700
+Processing by QuestionsController#show as HTML
+  Parameters: {"user_id"=>"5", "id"=>"45"}
+  [1m[36mQuestion Load (0.1ms)[0m  [1mSELECT  "questions".* FROM "questions"  WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 45]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+  Rendered questions/show.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+Completed 200 OK in 69ms (Views: 67.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/5/questions/45/edit" for 127.0.0.1 at 2014-09-04 10:16:16 -0700
+Processing by QuestionsController#edit as JS
+  Parameters: {"user_id"=>"5", "id"=>"45"}
+  [1m[35mQuestion Load (0.1ms)[0m  SELECT  "questions".* FROM "questions"  WHERE "questions"."id" = $1 LIMIT 1  [["id", 45]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+  Rendered questions/_question_form.html.erb (1.7ms)
+  Rendered questions/edit.js.erb (4.1ms)
+Completed 200 OK in 8ms (Views: 6.6ms | ActiveRecord: 0.3ms)
+
+
+Started PATCH "/users/5/questions/45" for 127.0.0.1 at 2014-09-04 10:16:24 -0700
+Processing by QuestionsController#update as JS
+  Parameters: {"utf8"=>"✓", "question"=>{"subject"=>"Yet another question", "question"=>"Whaaaa?", "user_id"=>"5"}, "commit"=>"Update Question", "user_id"=>"5", "id"=>"45"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1mSELECT  "questions".* FROM "questions"  WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 45]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  UPDATE "questions" SET "question" = $1, "updated_at" = $2 WHERE "questions"."id" = 45  [["question", "Whaaaa?"], ["updated_at", "2014-09-04 17:16:24.732749"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  Rendered questions/update.js.erb (0.3ms)
+Completed 200 OK in 5ms (Views: 1.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/users/5/questions/45" for 127.0.0.1 at 2014-09-04 10:17:05 -0700
+Processing by QuestionsController#show as HTML
+  Parameters: {"user_id"=>"5", "id"=>"45"}
+  [1m[35mQuestion Load (0.2ms)[0m  SELECT  "questions".* FROM "questions"  WHERE "questions"."id" = $1 LIMIT 1  [["id", 45]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  Rendered questions/show.html.erb within layouts/application (0.2ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+Completed 200 OK in 72ms (Views: 70.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/5/questions/45/edit" for 127.0.0.1 at 2014-09-04 10:17:07 -0700
+Processing by QuestionsController#edit as JS
+  Parameters: {"user_id"=>"5", "id"=>"45"}
+  [1m[36mQuestion Load (0.1ms)[0m  [1mSELECT  "questions".* FROM "questions"  WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 45]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  Rendered questions/_question_form.html.erb (1.7ms)
+  Rendered questions/edit.js.erb (4.0ms)
+Completed 200 OK in 8ms (Views: 6.3ms | ActiveRecord: 0.3ms)
+
+
+Started PATCH "/users/5/questions/45" for 127.0.0.1 at 2014-09-04 10:17:23 -0700
+Processing by QuestionsController#update as JS
+  Parameters: {"utf8"=>"✓", "question"=>{"subject"=>"Was ist das?", "question"=>"Whaaaa?", "user_id"=>"5"}, "commit"=>"Update Question", "user_id"=>"5", "id"=>"45"}
+  [1m[35mQuestion Load (0.1ms)[0m  SELECT  "questions".* FROM "questions"  WHERE "questions"."id" = $1 LIMIT 1  [["id", 45]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mUPDATE "questions" SET "subject" = $1, "updated_at" = $2 WHERE "questions"."id" = 45[0m  [["subject", "Was ist das?"], ["updated_at", "2014-09-04 17:17:23.491111"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  Rendered questions/update.js.erb (0.4ms)
+Completed 200 OK in 5ms (Views: 1.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/users/5/questions/45" for 127.0.0.1 at 2014-09-04 10:17:51 -0700
+Processing by QuestionsController#show as HTML
+  Parameters: {"user_id"=>"5", "id"=>"45"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1mSELECT  "questions".* FROM "questions"  WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 45]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+  Rendered questions/show.html.erb within layouts/application (0.2ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+Completed 200 OK in 69ms (Views: 67.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/5/questions/45/edit" for 127.0.0.1 at 2014-09-04 10:17:53 -0700
+Processing by QuestionsController#edit as JS
+  Parameters: {"user_id"=>"5", "id"=>"45"}
+  [1m[35mQuestion Load (0.1ms)[0m  SELECT  "questions".* FROM "questions"  WHERE "questions"."id" = $1 LIMIT 1  [["id", 45]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+  Rendered questions/_question_form.html.erb (1.8ms)
+  Rendered questions/edit.js.erb (3.9ms)
+Completed 200 OK in 8ms (Views: 6.4ms | ActiveRecord: 0.3ms)
+
+
+Started PATCH "/users/5/questions/45" for 127.0.0.1 at 2014-09-04 10:18:24 -0700
+Processing by QuestionsController#update as JS
+  Parameters: {"utf8"=>"✓", "question"=>{"subject"=>"Warum isst du das?", "question"=>"Weil ich liebe kartoffelpuffer.", "user_id"=>"5"}, "commit"=>"Update Question", "user_id"=>"5", "id"=>"45"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1mSELECT  "questions".* FROM "questions"  WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 45]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "questions" SET "question" = $1, "subject" = $2, "updated_at" = $3 WHERE "questions"."id" = 45  [["question", "Weil ich liebe kartoffelpuffer."], ["subject", "Warum isst du das?"], ["updated_at", "2014-09-04 17:18:24.636820"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  Rendered questions/update.js.erb (0.3ms)
+Completed 200 OK in 5ms (Views: 1.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/users/5/questions/45/edit" for 127.0.0.1 at 2014-09-04 10:18:27 -0700
+Processing by QuestionsController#edit as JS
+  Parameters: {"user_id"=>"5", "id"=>"45"}
+  [1m[35mQuestion Load (0.1ms)[0m  SELECT  "questions".* FROM "questions"  WHERE "questions"."id" = $1 LIMIT 1  [["id", 45]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+  Rendered questions/_question_form.html.erb (1.7ms)
+  Rendered questions/edit.js.erb (4.1ms)
+Completed 200 OK in 8ms (Views: 6.5ms | ActiveRecord: 0.3ms)
+
+
+Started PATCH "/users/5/questions/45" for 127.0.0.1 at 2014-09-04 10:18:42 -0700
+Processing by QuestionsController#update as JS
+  Parameters: {"utf8"=>"✓", "question"=>{"subject"=>"Why do you eat that?", "question"=>"because I love potato puffs.", "user_id"=>"5"}, "commit"=>"Update Question", "user_id"=>"5", "id"=>"45"}
+  [1m[36mQuestion Load (0.1ms)[0m  [1mSELECT  "questions".* FROM "questions"  WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 45]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  UPDATE "questions" SET "question" = $1, "subject" = $2, "updated_at" = $3 WHERE "questions"."id" = 45  [["question", "because I love potato puffs."], ["subject", "Why do you eat that?"], ["updated_at", "2014-09-04 17:18:42.060835"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  Rendered questions/update.js.erb (0.1ms)
+Completed 200 OK in 4ms (Views: 1.2ms | ActiveRecord: 0.8ms)

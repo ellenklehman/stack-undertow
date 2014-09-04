@@ -1,12 +1,12 @@
-<h1><%= @question.subject %></h1>
+<h1 id="question-subject"><%= @question.subject %></h1>
 
 <p><%= @user.name %> has posed the following question:</p>
 
 <p>
-  <blockquote>
+  <blockquote id="question-text">
     <%= @question.question %>
   </blockquote>
 
 </p>
 
-
+<%= link_to "Edit this question", edit_user_question_path(@user, @question), id: "edit-button", remote: true, class: "btn btn-primary" %>
