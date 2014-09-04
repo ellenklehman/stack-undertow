@@ -1,4 +1,4 @@
 $('#new_question').remove();
 $('#new_question_link').show();
-$('#user_questions').append('<%= j render(@questions) %>');
+$('#user_questions').html('<%= j render(@questions) %>');
 

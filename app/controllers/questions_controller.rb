@@ -8,6 +8,7 @@ class QuestionsController < ApplicationController
   def create
     @questions = Question.all
     @question = Question.new(question_params)
+    @user = User.find(params[:user_id])
     if @question.save
       flash[:notice] = "Success!"
       respond_to do |format|
@@ -23,6 +24,10 @@ class QuestionsController < ApplicationController
   def show
     @question = Question.find(params[:id])
     @user = User.find(params[:user_id])
+  end
+
+  def index
+
   end
 
 private
