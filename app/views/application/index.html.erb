@@ -1,2 +1,10 @@
-<h1>Hello World!</h1>
+
+<h1>Undertow, a Stack Overflow Clone</h1>
+<% if current_user %>
+  <%= link_to "My Dashboard", user_path(current_user), class: "btn btn-success" %>
+<% end %>
+
+<%= link_to "View all questions", questions_path, class: 'btn btn-primary' %>
+
+<%= link_to "View all users", users_path, class: 'btn btn-warning' %>
 

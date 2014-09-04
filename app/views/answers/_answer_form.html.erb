@@ -1,0 +1,11 @@
+<%= form_for [@user, @question, @answer], remote: true do |f| %>
+
+  <div class="form-group">
+    <%= f.label :answer %>
+    <%= f.text_area :answer %>
+    <%= f.hidden_field :user_id, value: current_user.id %>
+    <%= f.hidden_field :question_id, value: @question.id %>
+    <%= f.submit %>
+  </div>
+
+<% end %>

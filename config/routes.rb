@@ -10,7 +10,9 @@ Rails.application.routes.draw do
     resources :questions, except: :index
   end
 
-  resources :questions, only: [:index, :show]
+  resources :questions, only: [:index, :show] do
+    resources :answers
+  end
 
 
   resources :sessions
