@@ -6,7 +6,7 @@ class AnswersController < ApplicationController
   end
 
   def create
-    @answer = Answer.new(answer_params, params)#[:question_id], params[:user_id])
+    @answer = Answer.new(answer_params)
     @question = Question.find(params[:question_id])
     @user = User.find(@question.user_id)
     @answer.question_id = @question.id
@@ -23,6 +23,8 @@ class AnswersController < ApplicationController
       render('new')
     end
   end
+
+
 
 private
 

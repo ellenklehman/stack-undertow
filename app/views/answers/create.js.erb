@@ -1,3 +1,11 @@
+
+
 $('#new_answer').hide();
 $('#answer-button').show();
+
+<% answer_id = "answer_" + @answer.id.to_s %>
+<% html_string = "<li id=#{answer_id}><%= @answer.answer %></li>" %>
+
 $('#answer-list').append("<li><%= @answer.answer %></li>");
+
+

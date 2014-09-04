@@ -17078,3 +17078,169 @@ Processing by UsersController#show as HTML
   [1m[35mQuestion Load (0.1ms)[0m  SELECT "questions".* FROM "questions"  WHERE "questions"."user_id" = $1  [["user_id", 5]]
   Rendered users/show.html.erb within layouts/application (1.2ms)
 Completed 200 OK in 83ms (Views: 80.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/5" for 127.0.0.1 at 2014-09-04 11:47:34 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+  [1m[36mQuestion Load (0.1ms)[0m  [1mSELECT "questions".* FROM "questions"  WHERE "questions"."user_id" = $1[0m  [["user_id", 5]]
+  Rendered users/show.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 87ms (Views: 77.6ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-09-04 11:47:47 -0700
+Processing by ApplicationController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+  Rendered application/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 83ms (Views: 82.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/questions" for 127.0.0.1 at 2014-09-04 11:47:49 -0700
+Processing by QuestionsController#index as HTML
+  [1m[36mQuestion Load (0.2ms)[0m  [1mSELECT "questions".* FROM "questions"   ORDER BY "questions"."created_at" ASC[0m
+  Rendered questions/index.html.erb within layouts/application (1.1ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+Completed 200 OK in 84ms (Views: 83.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/questions/49" for 127.0.0.1 at 2014-09-04 11:47:50 -0700
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"49"}
+  [1m[36mQuestion Load (0.1ms)[0m  [1mSELECT  "questions".* FROM "questions"  WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 49]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  [1m[35mAnswer Load (0.1ms)[0m  SELECT "answers".* FROM "answers"  WHERE "answers"."question_id" = $1  [["question_id", 49]]
+  Rendered questions/show.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 83ms (Views: 79.0ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/questions/49/answers/new" for 127.0.0.1 at 2014-09-04 11:47:51 -0700
+Processing by AnswersController#new as JS
+  Parameters: {"question_id"=>"49"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1mSELECT  "questions".* FROM "questions"  WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 49]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+  Rendered answers/_answer_form.html.erb (2.6ms)
+  Rendered answers/new.js.erb (4.7ms)
+Completed 200 OK in 9ms (Views: 7.2ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/questions/49/answers" for 127.0.0.1 at 2014-09-04 11:48:01 -0700
+Processing by AnswersController#create as JS
+  Parameters: {"utf8"=>"✓", "answer"=>{"answer"=>"As a cupcake, I am seriously offended.", "user_id"=>"5", "question_id"=>"49"}, "commit"=>"Create Answer", "question_id"=>"49"}
+Unpermitted parameters: user_id, question_id
+  [1m[36mQuestion Load (0.2ms)[0m  [1mSELECT  "questions".* FROM "questions"  WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 49]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "answers" ("answer", "created_at", "question_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["answer", "As a cupcake, I am seriously offended."], ["created_at", "2014-09-04 18:48:01.798303"], ["question_id", 49], ["updated_at", "2014-09-04 18:48:01.798303"], ["user_id", 4]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  Rendered answers/create.js.erb (0.0ms)
+Completed 200 OK in 4ms (Views: 1.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/questions/49" for 127.0.0.1 at 2014-09-04 11:48:04 -0700
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"49"}
+  [1m[35mQuestion Load (0.1ms)[0m  SELECT  "questions".* FROM "questions"  WHERE "questions"."id" = $1 LIMIT 1  [["id", 49]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+  [1m[36mAnswer Load (0.2ms)[0m  [1mSELECT "answers".* FROM "answers"  WHERE "answers"."question_id" = $1[0m  [["question_id", 49]]
+  Rendered questions/show.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 82ms (Views: 80.7ms | ActiveRecord: 0.5ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to EditQuestions (20140904185519)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.6ms)[0m  [1mALTER TABLE "questions" ADD COLUMN "favorite_answer" integer[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20140904185519"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+
+Started GET "/" for 127.0.0.1 at 2014-09-04 12:16:27 -0700
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Processing by ApplicationController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  Rendered application/index.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 106ms (Views: 104.0ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/questions" for 127.0.0.1 at 2014-09-04 12:16:30 -0700
+Processing by QuestionsController#index as HTML
+  [1m[35mQuestion Load (0.3ms)[0m  SELECT "questions".* FROM "questions"   ORDER BY "questions"."created_at" ASC
+  Rendered questions/index.html.erb within layouts/application (5.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+Completed 200 OK in 81ms (Views: 77.5ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/questions/49" for 127.0.0.1 at 2014-09-04 12:16:31 -0700
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"49"}
+  [1m[35mQuestion Load (0.8ms)[0m  SELECT  "questions".* FROM "questions"  WHERE "questions"."id" = $1 LIMIT 1  [["id", 49]]
+PG::FeatureNotSupported: ERROR:  cached plan must not change result type
+: SELECT  "questions".* FROM "questions"  WHERE "questions"."id" = $1 LIMIT 1
+  [1m[36mQuestion Load (0.1ms)[0m  [1mSELECT  "questions".* FROM "questions"  WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 49]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  [1m[35mAnswer Load (0.1ms)[0m  SELECT "answers".* FROM "answers"  WHERE "answers"."question_id" = $1  [["question_id", 49]]
+  Rendered questions/show.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 97ms (Views: 88.5ms | ActiveRecord: 2.3ms)
+
+
+Started DELETE "/sessions/current" for 127.0.0.1 at 2014-09-04 12:16:36 -0700
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"YfCYjkXBJWyr+4jRMmdcr97NKS8U/ce4gvCb88rHFQI=", "id"=>"current"}
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-09-04 12:16:36 -0700
+Processing by ApplicationController#index as HTML
+  Rendered application/index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 77ms (Views: 76.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2014-09-04 12:16:37 -0700
+Processing by SessionsController#new as HTML
+  Rendered sessions/_form.html.erb (0.4ms)
+  Rendered sessions/new.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 83ms (Views: 82.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2014-09-04 12:16:41 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YfCYjkXBJWyr+4jRMmdcr97NKS8U/ce4gvCb88rHFQI=", "email"=>"ellen@ellen.com", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."email" = 'ellen@ellen.com' LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 61ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-09-04 12:16:41 -0700
+Processing by ApplicationController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  Rendered application/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 76ms (Views: 75.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/users/4" for 127.0.0.1 at 2014-09-04 12:16:43 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36mQuestion Load (0.8ms)[0m  [1mSELECT "questions".* FROM "questions"  WHERE "questions"."user_id" = $1[0m  [["user_id", 4]]
+PG::FeatureNotSupported: ERROR:  cached plan must not change result type
+: SELECT "questions".* FROM "questions"  WHERE "questions"."user_id" = $1
+  [1m[35mQuestion Load (0.2ms)[0m  SELECT "questions".* FROM "questions"  WHERE "questions"."user_id" = $1  [["user_id", 4]]
+  Rendered users/show.html.erb within layouts/application (9.8ms)
+Completed 200 OK in 95ms (Views: 91.3ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/users/4/questions/49" for 127.0.0.1 at 2014-09-04 12:16:45 -0700
+Processing by QuestionsController#show as HTML
+  Parameters: {"user_id"=>"4", "id"=>"49"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1mSELECT  "questions".* FROM "questions"  WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 49]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  [1m[35mAnswer Load (0.1ms)[0m  SELECT "answers".* FROM "answers"  WHERE "answers"."question_id" = $1  [["question_id", 49]]
+  Rendered questions/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 84ms (Views: 82.8ms | ActiveRecord: 0.4ms)
