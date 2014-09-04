@@ -57,7 +57,6 @@ class QuestionsController < ApplicationController
     redirect_to user_path(current_user)
   end
 
-
 private
   def question_params
     params.require(:question).permit(:subject, :question, :user_id)
