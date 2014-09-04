@@ -5,6 +5,10 @@ class QuestionsController < ApplicationController
     @user = current_user
   end
 
+  def index
+    @questions = Question.all.order(:created_at)
+  end
+
   def create
     @questions = Question.all
     @question = Question.new(question_params)
@@ -23,7 +27,7 @@ class QuestionsController < ApplicationController
 
   def show
     @question = Question.find(params[:id])
-    @user = User.find(params[:user_id])
+    @user = User.find(@question.user_id)
   end
 
   def edit

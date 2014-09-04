@@ -7,8 +7,11 @@ Rails.application.routes.draw do
   get 'logout', to: 'sessions#destroy', as: 'logout'
 
   resources :users do
-    resources :questions
+    resources :questions, except: :index
   end
+
+  resources :questions, only: [:index, :show]
+
 
   resources :sessions
 
