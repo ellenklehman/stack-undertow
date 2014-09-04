@@ -1,4 +1,15 @@
+jQuery.fn.submitOnCheck = $(function () {
+    alert("hello!");
+    // $(this).submit();
+  });
+});
+
+$(function () {
+  $('.btn btn-primary').submitOnCheck();
+});
+
 $('#edit_question_<%= @question.id %>').remove();
 $('#edit-button').show();
 $('#question-text').html('<%= @question.question %>').show();
 $('#question-subject').html('<%= @question.subject %>').show();
+

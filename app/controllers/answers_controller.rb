@@ -24,6 +24,15 @@ class AnswersController < ApplicationController
     end
   end
 
+  def show
+    @question = Question.find(params[:question_id])
+    @answer = Answer.find(params[:id])
+    respond_to  do |format|
+      format.html #{ redirect_to user_question_path(@user, @question) }
+      format.js
+    end
+  end
+
 
 
 private
