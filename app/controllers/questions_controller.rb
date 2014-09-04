@@ -13,6 +13,7 @@ class QuestionsController < ApplicationController
     @question = Question.new(question_params)
     @user = User.find(params[:user_id])
     @questions = @user.questions
+
     if @question.save
       flash[:notice] = "Success!"
       respond_to do |format|

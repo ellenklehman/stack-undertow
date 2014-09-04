@@ -15675,3 +15675,1406 @@ Processing by QuestionsController#create as JS
   Rendered questions/_question.html.erb (0.4ms)
   Rendered questions/create.js.erb (1.7ms)
 Completed 200 OK in 6ms (Views: 3.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users/4/questions/49" for 127.0.0.1 at 2014-09-04 11:24:17 -0700
+Processing by QuestionsController#show as HTML
+  Parameters: {"user_id"=>"4", "id"=>"49"}
+  [1m[35mQuestion Load (0.1ms)[0m  SELECT  "questions".* FROM "questions"  WHERE "questions"."id" = $1 LIMIT 1  [["id", 49]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  Rendered questions/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 85ms (Views: 81.9ms | ActiveRecord: 1.2ms)
+
+
+Started DELETE "/sessions/current" for 127.0.0.1 at 2014-09-04 11:24:20 -0700
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"YfCYjkXBJWyr+4jRMmdcr97NKS8U/ce4gvCb88rHFQI=", "id"=>"current"}
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-09-04 11:24:20 -0700
+Processing by ApplicationController#index as HTML
+  Rendered application/index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 76ms (Views: 76.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2014-09-04 11:24:21 -0700
+Processing by SessionsController#new as HTML
+  Rendered sessions/_form.html.erb (0.5ms)
+  Rendered sessions/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 80ms (Views: 79.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2014-09-04 11:24:26 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YfCYjkXBJWyr+4jRMmdcr97NKS8U/ce4gvCb88rHFQI=", "email"=>"justin@justin.com", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."email" = 'justin@justin.com' LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 60ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-09-04 11:24:26 -0700
+Processing by ApplicationController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+  Rendered application/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 74ms (Views: 73.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/questions" for 127.0.0.1 at 2014-09-04 11:24:28 -0700
+Processing by QuestionsController#index as HTML
+  [1m[36mQuestion Load (0.2ms)[0m  [1mSELECT "questions".* FROM "questions"   ORDER BY "questions"."created_at" ASC[0m
+  Rendered questions/index.html.erb within layouts/application (1.0ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+Completed 200 OK in 76ms (Views: 74.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/questions/49" for 127.0.0.1 at 2014-09-04 11:24:30 -0700
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"49"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1mSELECT  "questions".* FROM "questions"  WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 49]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  Rendered questions/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 81ms (Views: 79.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/questions/49/answers/new" for 127.0.0.1 at 2014-09-04 11:24:32 -0700
+Processing by AnswersController#new as JS
+  Parameters: {"question_id"=>"49"}
+  [1m[35mQuestion Load (0.1ms)[0m  SELECT  "questions".* FROM "questions"  WHERE "questions"."id" = $1 LIMIT 1  [["id", 49]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  Rendered answers/_answer_form.html.erb (3.6ms)
+  Rendered answers/new.js.erb (5.9ms)
+Completed 200 OK in 10ms (Views: 8.5ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/questions/49/answers" for 127.0.0.1 at 2014-09-04 11:24:38 -0700
+Processing by AnswersController#create as JS
+  Parameters: {"utf8"=>"✓", "answer"=>{"answer"=>"Me neither.", "user_id"=>"5", "question_id"=>"49"}, "commit"=>"Create Answer", "question_id"=>"49"}
+Unpermitted parameters: user_id, question_id
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+Completed 500 Internal Server Error in 2ms
+
+ArgumentError - wrong number of arguments (3 for 0..2):
+  activerecord (4.1.5) lib/active_record/inheritance.rb:30:in `new'
+   () Users/epicodus/Code/undertow/app/controllers/answers_controller.rb:9:in `create'
+  actionpack (4.1.5) lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+  actionpack (4.1.5) lib/abstract_controller/base.rb:189:in `process_action'
+  actionpack (4.1.5) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.1.5) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.1.5) lib/active_support/callbacks.rb:113:in `call'
+  activesupport (4.1.5) lib/active_support/callbacks.rb:229:in `block in halting'
+  activesupport (4.1.5) lib/active_support/callbacks.rb:229:in `block in halting'
+  activesupport (4.1.5) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.5) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.5) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.5) lib/active_support/callbacks.rb:86:in `run_callbacks'
+  actionpack (4.1.5) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.1.5) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.1.5) lib/action_controller/metal/instrumentation.rb:31:in `block in process_action'
+  activesupport (4.1.5) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.1.5) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.1.5) lib/active_support/notifications.rb:159:in `instrument'
+  actionpack (4.1.5) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.1.5) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.1.5) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.1.5) lib/abstract_controller/base.rb:136:in `process'
+  actionview (4.1.5) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.1.5) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.1.5) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.1.5) lib/action_controller/metal.rb:232:in `block in action'
+  actionpack (4.1.5) lib/action_dispatch/routing/route_set.rb:82:in `dispatch'
+  actionpack (4.1.5) lib/action_dispatch/routing/route_set.rb:50:in `call'
+  actionpack (4.1.5) lib/action_dispatch/journey/router.rb:71:in `block in call'
+  actionpack (4.1.5) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.1.5) lib/action_dispatch/routing/route_set.rb:678:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:35:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/flash.rb:254:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.1.5) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.1.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:621:in `call'
+  activerecord (4.1.5) lib/active_record/migration.rb:380:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.5) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.5) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  better_errors (2.0.0) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (2.0.0) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (2.0.0) lib/better_errors/middleware.rb:57:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.5) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.0.3) lib/quiet_assets.rb:23:in `call_with_quiet_assets'
+  actionpack (4.1.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.5) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.5) lib/rails/engine.rb:514:in `call'
+  railties (4.1.5) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+   () Users/epicodus/.rubies/ruby-2.1.0/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+   () Users/epicodus/.rubies/ruby-2.1.0/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+   () Users/epicodus/.rubies/ruby-2.1.0/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+
+Started GET "/questions/49" for 127.0.0.1 at 2014-09-04 11:28:40 -0700
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"49"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1mSELECT  "questions".* FROM "questions"  WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 49]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  Rendered questions/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 77ms (Views: 75.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/questions/49" for 127.0.0.1 at 2014-09-04 11:28:41 -0700
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"49"}
+  [1m[35mQuestion Load (0.2ms)[0m  SELECT  "questions".* FROM "questions"  WHERE "questions"."id" = $1 LIMIT 1  [["id", 49]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+  Rendered questions/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 82ms (Views: 79.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/questions/49" for 127.0.0.1 at 2014-09-04 11:29:57 -0700
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"49"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1mSELECT  "questions".* FROM "questions"  WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 49]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  Rendered questions/show.html.erb within layouts/application (2.9ms)
+Completed 500 Internal Server Error in 6ms
+
+NoMethodError - undefined method `answers' for #<Question:0x007f81129dff40>:
+  activemodel (4.1.5) lib/active_model/attribute_methods.rb:435:in `method_missing'
+  activerecord (4.1.5) lib/active_record/attribute_methods.rb:208:in `method_missing'
+   () Users/epicodus/Code/undertow/app/views/questions/show.html.erb:25:in `_app_views_questions_show_html_erb__1253582784666296364_70096221853800'
+  actionview (4.1.5) lib/action_view/template.rb:145:in `block in render'
+  activesupport (4.1.5) lib/active_support/notifications.rb:161:in `instrument'
+  actionview (4.1.5) lib/action_view/template.rb:339:in `instrument'
+  actionview (4.1.5) lib/action_view/template.rb:143:in `render'
+  actionview (4.1.5) lib/action_view/renderer/template_renderer.rb:55:in `block (2 levels) in render_template'
+  actionview (4.1.5) lib/action_view/renderer/abstract_renderer.rb:38:in `block in instrument'
+  activesupport (4.1.5) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.1.5) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.1.5) lib/active_support/notifications.rb:159:in `instrument'
+  actionview (4.1.5) lib/action_view/renderer/abstract_renderer.rb:38:in `instrument'
+  actionview (4.1.5) lib/action_view/renderer/template_renderer.rb:54:in `block in render_template'
+  actionview (4.1.5) lib/action_view/renderer/template_renderer.rb:62:in `render_with_layout'
+  actionview (4.1.5) lib/action_view/renderer/template_renderer.rb:53:in `render_template'
+  actionview (4.1.5) lib/action_view/renderer/template_renderer.rb:17:in `render'
+  actionview (4.1.5) lib/action_view/renderer/renderer.rb:42:in `render_template'
+  actionview (4.1.5) lib/action_view/renderer/renderer.rb:23:in `render'
+  actionview (4.1.5) lib/action_view/rendering.rb:99:in `_render_template'
+  actionpack (4.1.5) lib/action_controller/metal/streaming.rb:217:in `_render_template'
+  actionview (4.1.5) lib/action_view/rendering.rb:82:in `render_to_body'
+  actionpack (4.1.5) lib/action_controller/metal/rendering.rb:32:in `render_to_body'
+  actionpack (4.1.5) lib/action_controller/metal/renderers.rb:32:in `render_to_body'
+  actionpack (4.1.5) lib/abstract_controller/rendering.rb:25:in `render'
+  actionpack (4.1.5) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.1.5) lib/action_controller/metal/instrumentation.rb:41:in `block (2 levels) in render'
+  activesupport (4.1.5) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+   () Users/epicodus/.rubies/ruby-2.1.0/lib/ruby/2.1.0/benchmark.rb:294:in `realtime'
+  activesupport (4.1.5) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.1.5) lib/action_controller/metal/instrumentation.rb:41:in `block in render'
+  actionpack (4.1.5) lib/action_controller/metal/instrumentation.rb:84:in `cleanup_view_runtime'
+  activerecord (4.1.5) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.1.5) lib/action_controller/metal/instrumentation.rb:40:in `render'
+  actionpack (4.1.5) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (4.1.5) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (4.1.5) lib/abstract_controller/base.rb:189:in `process_action'
+  actionpack (4.1.5) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.1.5) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.1.5) lib/active_support/callbacks.rb:113:in `call'
+  activesupport (4.1.5) lib/active_support/callbacks.rb:229:in `block in halting'
+  activesupport (4.1.5) lib/active_support/callbacks.rb:229:in `block in halting'
+  activesupport (4.1.5) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.5) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.5) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.5) lib/active_support/callbacks.rb:86:in `run_callbacks'
+  actionpack (4.1.5) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.1.5) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.1.5) lib/action_controller/metal/instrumentation.rb:31:in `block in process_action'
+  activesupport (4.1.5) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.1.5) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.1.5) lib/active_support/notifications.rb:159:in `instrument'
+  actionpack (4.1.5) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.1.5) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.1.5) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.1.5) lib/abstract_controller/base.rb:136:in `process'
+  actionview (4.1.5) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.1.5) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.1.5) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.1.5) lib/action_controller/metal.rb:232:in `block in action'
+  actionpack (4.1.5) lib/action_dispatch/routing/route_set.rb:82:in `dispatch'
+  actionpack (4.1.5) lib/action_dispatch/routing/route_set.rb:50:in `call'
+  actionpack (4.1.5) lib/action_dispatch/journey/router.rb:71:in `block in call'
+  actionpack (4.1.5) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.1.5) lib/action_dispatch/routing/route_set.rb:678:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/flash.rb:254:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.1.5) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.1.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:621:in `call'
+  activerecord (4.1.5) lib/active_record/migration.rb:380:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.5) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.5) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  better_errors (2.0.0) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (2.0.0) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (2.0.0) lib/better_errors/middleware.rb:57:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.5) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.0.3) lib/quiet_assets.rb:23:in `call_with_quiet_assets'
+  actionpack (4.1.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.5) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.5) lib/rails/engine.rb:514:in `call'
+  railties (4.1.5) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+   () Users/epicodus/.rubies/ruby-2.1.0/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+   () Users/epicodus/.rubies/ruby-2.1.0/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+   () Users/epicodus/.rubies/ruby-2.1.0/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+
+Started POST "/__better_errors/f1c42718a8981771/variables" for 127.0.0.1 at 2014-09-04 11:29:57 -0700
+
+
+Started GET "/" for 127.0.0.1 at 2014-09-04 11:30:32 -0700
+Processing by ApplicationController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+  Rendered application/index.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 91ms (Views: 89.1ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/users/5" for 127.0.0.1 at 2014-09-04 11:30:35 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+  [1m[36mQuestion Load (0.2ms)[0m  [1mSELECT "questions".* FROM "questions"  WHERE "questions"."user_id" = $1[0m  [["user_id", 5]]
+  Rendered users/show.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 83ms (Views: 78.5ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/questions" for 127.0.0.1 at 2014-09-04 11:30:38 -0700
+Processing by QuestionsController#index as HTML
+  [1m[35mQuestion Load (0.3ms)[0m  SELECT "questions".* FROM "questions"   ORDER BY "questions"."created_at" ASC
+  Rendered questions/index.html.erb within layouts/application (1.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+Completed 200 OK in 88ms (Views: 86.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2014-09-04 11:30:41 -0700
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"   ORDER BY "users"."name" ASC
+  Rendered users/index.html.erb within layouts/application (0.8ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+Completed 200 OK in 76ms (Views: 75.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/4" for 127.0.0.1 at 2014-09-04 11:30:42 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  [1m[35mQuestion Load (0.1ms)[0m  SELECT "questions".* FROM "questions"  WHERE "questions"."user_id" = $1  [["user_id", 4]]
+  Rendered users/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 82ms (Views: 80.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/4/questions/50" for 127.0.0.1 at 2014-09-04 11:30:43 -0700
+Processing by QuestionsController#show as HTML
+  Parameters: {"user_id"=>"4", "id"=>"50"}
+  [1m[36mQuestion Load (0.1ms)[0m  [1mSELECT  "questions".* FROM "questions"  WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 50]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  [1m[35mAnswer Load (13.3ms)[0m  SELECT "answers".* FROM "answers"  WHERE "answers"."question_id" = $1  [["question_id", 50]]
+  Rendered questions/show.html.erb within layouts/application (16.5ms)
+Completed 200 OK in 95ms (Views: 78.6ms | ActiveRecord: 14.5ms)
+
+
+Started GET "/questions/50/answers/new" for 127.0.0.1 at 2014-09-04 11:30:44 -0700
+Processing by AnswersController#new as JS
+  Parameters: {"question_id"=>"50"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1mSELECT  "questions".* FROM "questions"  WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 50]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+  Rendered answers/_answer_form.html.erb (3.9ms)
+  Rendered answers/new.js.erb (6.8ms)
+Completed 200 OK in 11ms (Views: 9.9ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/questions/50/answers" for 127.0.0.1 at 2014-09-04 11:30:50 -0700
+Processing by AnswersController#create as JS
+  Parameters: {"utf8"=>"✓", "answer"=>{"answer"=>"HELP ME TOO!", "user_id"=>"5", "question_id"=>"50"}, "commit"=>"Create Answer", "question_id"=>"50"}
+Unpermitted parameters: user_id, question_id
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+Completed 500 Internal Server Error in 1ms
+
+ArgumentError - wrong number of arguments (3 for 0..2):
+  activerecord (4.1.5) lib/active_record/inheritance.rb:30:in `new'
+   () Users/epicodus/Code/undertow/app/controllers/answers_controller.rb:9:in `create'
+  actionpack (4.1.5) lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+  actionpack (4.1.5) lib/abstract_controller/base.rb:189:in `process_action'
+  actionpack (4.1.5) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.1.5) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.1.5) lib/active_support/callbacks.rb:113:in `call'
+  activesupport (4.1.5) lib/active_support/callbacks.rb:229:in `block in halting'
+  activesupport (4.1.5) lib/active_support/callbacks.rb:229:in `block in halting'
+  activesupport (4.1.5) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.5) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.5) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.5) lib/active_support/callbacks.rb:86:in `run_callbacks'
+  actionpack (4.1.5) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.1.5) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.1.5) lib/action_controller/metal/instrumentation.rb:31:in `block in process_action'
+  activesupport (4.1.5) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.1.5) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.1.5) lib/active_support/notifications.rb:159:in `instrument'
+  actionpack (4.1.5) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.1.5) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.1.5) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.1.5) lib/abstract_controller/base.rb:136:in `process'
+  actionview (4.1.5) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.1.5) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.1.5) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.1.5) lib/action_controller/metal.rb:232:in `block in action'
+  actionpack (4.1.5) lib/action_dispatch/routing/route_set.rb:82:in `dispatch'
+  actionpack (4.1.5) lib/action_dispatch/routing/route_set.rb:50:in `call'
+  actionpack (4.1.5) lib/action_dispatch/journey/router.rb:71:in `block in call'
+  actionpack (4.1.5) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.1.5) lib/action_dispatch/routing/route_set.rb:678:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:35:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/flash.rb:254:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.1.5) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.1.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:621:in `call'
+  activerecord (4.1.5) lib/active_record/migration.rb:380:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.5) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.5) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  better_errors (2.0.0) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (2.0.0) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (2.0.0) lib/better_errors/middleware.rb:57:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.5) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.0.3) lib/quiet_assets.rb:23:in `call_with_quiet_assets'
+  actionpack (4.1.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.5) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.5) lib/rails/engine.rb:514:in `call'
+  railties (4.1.5) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+   () Users/epicodus/.rubies/ruby-2.1.0/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+   () Users/epicodus/.rubies/ruby-2.1.0/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+   () Users/epicodus/.rubies/ruby-2.1.0/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+
+Started GET "/users/4/questions/50" for 127.0.0.1 at 2014-09-04 11:30:53 -0700
+Processing by QuestionsController#show as HTML
+  Parameters: {"user_id"=>"4", "id"=>"50"}
+  [1m[35mQuestion Load (0.2ms)[0m  SELECT  "questions".* FROM "questions"  WHERE "questions"."id" = $1 LIMIT 1  [["id", 50]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1mSELECT "answers".* FROM "answers"  WHERE "answers"."question_id" = $1[0m  [["question_id", 50]]
+  Rendered questions/show.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 114ms (Views: 112.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/questions/50/answers/new" for 127.0.0.1 at 2014-09-04 11:31:03 -0700
+Processing by AnswersController#new as JS
+  Parameters: {"question_id"=>"50"}
+  [1m[35mQuestion Load (0.1ms)[0m  SELECT  "questions".* FROM "questions"  WHERE "questions"."id" = $1 LIMIT 1  [["id", 50]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  Rendered answers/_answer_form.html.erb (1.8ms)
+  Rendered answers/new.js.erb (4.0ms)
+Completed 200 OK in 8ms (Views: 6.4ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/questions/50/answers" for 127.0.0.1 at 2014-09-04 11:31:09 -0700
+Processing by AnswersController#create as JS
+  Parameters: {"utf8"=>"✓", "answer"=>{"answer"=>"test", "user_id"=>"5", "question_id"=>"50"}, "commit"=>"Create Answer", "question_id"=>"50"}
+Unpermitted parameters: user_id, question_id
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+Completed 500 Internal Server Error in 2ms
+
+ArgumentError - wrong number of arguments (3 for 0..2):
+  activerecord (4.1.5) lib/active_record/inheritance.rb:30:in `new'
+   () Users/epicodus/Code/undertow/app/controllers/answers_controller.rb:9:in `create'
+  actionpack (4.1.5) lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+  actionpack (4.1.5) lib/abstract_controller/base.rb:189:in `process_action'
+  actionpack (4.1.5) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.1.5) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.1.5) lib/active_support/callbacks.rb:113:in `call'
+  activesupport (4.1.5) lib/active_support/callbacks.rb:229:in `block in halting'
+  activesupport (4.1.5) lib/active_support/callbacks.rb:229:in `block in halting'
+  activesupport (4.1.5) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.5) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.5) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.5) lib/active_support/callbacks.rb:86:in `run_callbacks'
+  actionpack (4.1.5) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.1.5) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.1.5) lib/action_controller/metal/instrumentation.rb:31:in `block in process_action'
+  activesupport (4.1.5) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.1.5) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.1.5) lib/active_support/notifications.rb:159:in `instrument'
+  actionpack (4.1.5) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.1.5) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.1.5) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.1.5) lib/abstract_controller/base.rb:136:in `process'
+  actionview (4.1.5) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.1.5) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.1.5) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.1.5) lib/action_controller/metal.rb:232:in `block in action'
+  actionpack (4.1.5) lib/action_dispatch/routing/route_set.rb:82:in `dispatch'
+  actionpack (4.1.5) lib/action_dispatch/routing/route_set.rb:50:in `call'
+  actionpack (4.1.5) lib/action_dispatch/journey/router.rb:71:in `block in call'
+  actionpack (4.1.5) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.1.5) lib/action_dispatch/routing/route_set.rb:678:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:35:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/flash.rb:254:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.1.5) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.1.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:621:in `call'
+  activerecord (4.1.5) lib/active_record/migration.rb:380:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.5) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.5) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  better_errors (2.0.0) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (2.0.0) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (2.0.0) lib/better_errors/middleware.rb:57:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.5) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.0.3) lib/quiet_assets.rb:23:in `call_with_quiet_assets'
+  actionpack (4.1.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.5) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.5) lib/rails/engine.rb:514:in `call'
+  railties (4.1.5) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+   () Users/epicodus/.rubies/ruby-2.1.0/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+   () Users/epicodus/.rubies/ruby-2.1.0/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+   () Users/epicodus/.rubies/ruby-2.1.0/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+
+Started GET "/users/4/questions/50" for 127.0.0.1 at 2014-09-04 11:32:07 -0700
+Processing by QuestionsController#show as HTML
+  Parameters: {"user_id"=>"4", "id"=>"50"}
+  [1m[36mQuestion Load (0.1ms)[0m  [1mSELECT  "questions".* FROM "questions"  WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 50]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  [1m[35mAnswer Load (0.1ms)[0m  SELECT "answers".* FROM "answers"  WHERE "answers"."question_id" = $1  [["question_id", 50]]
+  Rendered questions/show.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 90ms (Views: 76.9ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/questions/50/answers/new" for 127.0.0.1 at 2014-09-04 11:32:08 -0700
+
+SyntaxError - syntax error, unexpected ',', expecting =>
+..._params, {params[:question_id], current_user.id})
+...                               ^
+/Users/epicodus/Code/undertow/app/controllers/answers_controller.rb:9: syntax error, unexpected '}', expecting keyword_end
+...:question_id], current_user.id})
+...                               ^:
+   () Users/epicodus/Code/undertow/app/controllers/answers_controller.rb:9:in `'
+  activesupport (4.1.5) lib/active_support/dependencies.rb:443:in `block in load_file'
+  activesupport (4.1.5) lib/active_support/dependencies.rb:633:in `new_constants_in'
+  activesupport (4.1.5) lib/active_support/dependencies.rb:442:in `load_file'
+  activesupport (4.1.5) lib/active_support/dependencies.rb:342:in `require_or_load'
+  activesupport (4.1.5) lib/active_support/dependencies.rb:480:in `load_missing_constant'
+  activesupport (4.1.5) lib/active_support/dependencies.rb:180:in `const_missing'
+  activesupport (4.1.5) lib/active_support/inflector/methods.rb:238:in `block in constantize'
+  activesupport (4.1.5) lib/active_support/inflector/methods.rb:236:in `constantize'
+  activesupport (4.1.5) lib/active_support/dependencies.rb:552:in `get'
+  activesupport (4.1.5) lib/active_support/dependencies.rb:583:in `constantize'
+  actionpack (4.1.5) lib/action_dispatch/routing/route_set.rb:78:in `controller_reference'
+  actionpack (4.1.5) lib/action_dispatch/routing/route_set.rb:68:in `controller'
+  actionpack (4.1.5) lib/action_dispatch/routing/route_set.rb:46:in `call'
+  actionpack (4.1.5) lib/action_dispatch/journey/router.rb:71:in `block in call'
+  actionpack (4.1.5) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.1.5) lib/action_dispatch/routing/route_set.rb:678:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/flash.rb:254:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.1.5) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.1.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:621:in `call'
+  activerecord (4.1.5) lib/active_record/migration.rb:380:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.5) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.5) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  better_errors (2.0.0) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (2.0.0) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (2.0.0) lib/better_errors/middleware.rb:57:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.5) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.0.3) lib/quiet_assets.rb:23:in `call_with_quiet_assets'
+  actionpack (4.1.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.5) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.5) lib/rails/engine.rb:514:in `call'
+  railties (4.1.5) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+   () Users/epicodus/.rubies/ruby-2.1.0/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+   () Users/epicodus/.rubies/ruby-2.1.0/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+   () Users/epicodus/.rubies/ruby-2.1.0/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+
+Started GET "/questions/50/answers/new" for 127.0.0.1 at 2014-09-04 11:32:09 -0700
+
+SyntaxError - syntax error, unexpected ',', expecting =>
+..._params, {params[:question_id], current_user.id})
+...                               ^
+/Users/epicodus/Code/undertow/app/controllers/answers_controller.rb:9: syntax error, unexpected '}', expecting keyword_end
+...:question_id], current_user.id})
+...                               ^:
+   () Users/epicodus/Code/undertow/app/controllers/answers_controller.rb:9:in `'
+  activesupport (4.1.5) lib/active_support/dependencies.rb:443:in `block in load_file'
+  activesupport (4.1.5) lib/active_support/dependencies.rb:633:in `new_constants_in'
+  activesupport (4.1.5) lib/active_support/dependencies.rb:442:in `load_file'
+  activesupport (4.1.5) lib/active_support/dependencies.rb:342:in `require_or_load'
+  activesupport (4.1.5) lib/active_support/dependencies.rb:480:in `load_missing_constant'
+  activesupport (4.1.5) lib/active_support/dependencies.rb:180:in `const_missing'
+  activesupport (4.1.5) lib/active_support/inflector/methods.rb:238:in `block in constantize'
+  activesupport (4.1.5) lib/active_support/inflector/methods.rb:236:in `constantize'
+  activesupport (4.1.5) lib/active_support/dependencies.rb:552:in `get'
+  activesupport (4.1.5) lib/active_support/dependencies.rb:583:in `constantize'
+  actionpack (4.1.5) lib/action_dispatch/routing/route_set.rb:78:in `controller_reference'
+  actionpack (4.1.5) lib/action_dispatch/routing/route_set.rb:68:in `controller'
+  actionpack (4.1.5) lib/action_dispatch/routing/route_set.rb:46:in `call'
+  actionpack (4.1.5) lib/action_dispatch/journey/router.rb:71:in `block in call'
+  actionpack (4.1.5) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.1.5) lib/action_dispatch/routing/route_set.rb:678:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/flash.rb:254:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.1.5) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.1.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:621:in `call'
+  activerecord (4.1.5) lib/active_record/migration.rb:380:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.5) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.5) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  better_errors (2.0.0) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (2.0.0) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (2.0.0) lib/better_errors/middleware.rb:57:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.5) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.0.3) lib/quiet_assets.rb:23:in `call_with_quiet_assets'
+  actionpack (4.1.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.5) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.5) lib/rails/engine.rb:514:in `call'
+  railties (4.1.5) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+   () Users/epicodus/.rubies/ruby-2.1.0/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+   () Users/epicodus/.rubies/ruby-2.1.0/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+   () Users/epicodus/.rubies/ruby-2.1.0/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+
+Started GET "/users/4/questions/50" for 127.0.0.1 at 2014-09-04 11:33:28 -0700
+Processing by QuestionsController#show as HTML
+  Parameters: {"user_id"=>"4", "id"=>"50"}
+  [1m[36mQuestion Load (0.1ms)[0m  [1mSELECT  "questions".* FROM "questions"  WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 50]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  [1m[35mAnswer Load (0.2ms)[0m  SELECT "answers".* FROM "answers"  WHERE "answers"."question_id" = $1  [["question_id", 50]]
+  Rendered questions/show.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 89ms (Views: 75.4ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/questions/50/answers/new" for 127.0.0.1 at 2014-09-04 11:33:35 -0700
+Processing by AnswersController#new as JS
+  Parameters: {"question_id"=>"50"}
+  [1m[36mQuestion Load (0.1ms)[0m  [1mSELECT  "questions".* FROM "questions"  WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 50]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+  Rendered answers/_answer_form.html.erb (3.3ms)
+  Rendered answers/new.js.erb (5.3ms)
+Completed 200 OK in 9ms (Views: 7.7ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/questions/50/answers" for 127.0.0.1 at 2014-09-04 11:33:40 -0700
+Processing by AnswersController#create as JS
+  Parameters: {"utf8"=>"✓", "answer"=>{"answer"=>"test", "user_id"=>"5", "question_id"=>"50"}, "commit"=>"Create Answer", "question_id"=>"50"}
+Unpermitted parameters: user_id, question_id
+Completed 500 Internal Server Error in 1ms
+
+ArgumentError - wrong number of arguments (3 for 0..2):
+  activerecord (4.1.5) lib/active_record/inheritance.rb:30:in `new'
+   () Users/epicodus/Code/undertow/app/controllers/answers_controller.rb:9:in `create'
+  actionpack (4.1.5) lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+  actionpack (4.1.5) lib/abstract_controller/base.rb:189:in `process_action'
+  actionpack (4.1.5) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.1.5) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.1.5) lib/active_support/callbacks.rb:113:in `call'
+  activesupport (4.1.5) lib/active_support/callbacks.rb:229:in `block in halting'
+  activesupport (4.1.5) lib/active_support/callbacks.rb:229:in `block in halting'
+  activesupport (4.1.5) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.5) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.5) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.5) lib/active_support/callbacks.rb:86:in `run_callbacks'
+  actionpack (4.1.5) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.1.5) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.1.5) lib/action_controller/metal/instrumentation.rb:31:in `block in process_action'
+  activesupport (4.1.5) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.1.5) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.1.5) lib/active_support/notifications.rb:159:in `instrument'
+  actionpack (4.1.5) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.1.5) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.1.5) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.1.5) lib/abstract_controller/base.rb:136:in `process'
+  actionview (4.1.5) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.1.5) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.1.5) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.1.5) lib/action_controller/metal.rb:232:in `block in action'
+  actionpack (4.1.5) lib/action_dispatch/routing/route_set.rb:82:in `dispatch'
+  actionpack (4.1.5) lib/action_dispatch/routing/route_set.rb:50:in `call'
+  actionpack (4.1.5) lib/action_dispatch/journey/router.rb:71:in `block in call'
+  actionpack (4.1.5) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.1.5) lib/action_dispatch/routing/route_set.rb:678:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:35:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/flash.rb:254:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.1.5) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.1.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:621:in `call'
+  activerecord (4.1.5) lib/active_record/migration.rb:380:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.5) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.5) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  better_errors (2.0.0) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (2.0.0) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (2.0.0) lib/better_errors/middleware.rb:57:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.5) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.0.3) lib/quiet_assets.rb:23:in `call_with_quiet_assets'
+  actionpack (4.1.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.5) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.5) lib/rails/engine.rb:514:in `call'
+  railties (4.1.5) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+   () Users/epicodus/.rubies/ruby-2.1.0/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+   () Users/epicodus/.rubies/ruby-2.1.0/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+   () Users/epicodus/.rubies/ruby-2.1.0/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+
+Started GET "/users/4/questions/50" for 127.0.0.1 at 2014-09-04 11:34:05 -0700
+Processing by QuestionsController#show as HTML
+  Parameters: {"user_id"=>"4", "id"=>"50"}
+  [1m[36mQuestion Load (0.1ms)[0m  [1mSELECT  "questions".* FROM "questions"  WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 50]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  [1m[35mAnswer Load (0.1ms)[0m  SELECT "answers".* FROM "answers"  WHERE "answers"."question_id" = $1  [["question_id", 50]]
+  Rendered questions/show.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 90ms (Views: 78.5ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/questions/50/answers/new" for 127.0.0.1 at 2014-09-04 11:34:07 -0700
+Processing by AnswersController#new as JS
+  Parameters: {"question_id"=>"50"}
+  [1m[36mQuestion Load (0.1ms)[0m  [1mSELECT  "questions".* FROM "questions"  WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 50]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+  Rendered answers/_answer_form.html.erb (3.5ms)
+  Rendered answers/new.js.erb (5.6ms)
+Completed 200 OK in 9ms (Views: 8.2ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/questions/50/answers" for 127.0.0.1 at 2014-09-04 11:34:13 -0700
+Processing by AnswersController#create as JS
+  Parameters: {"utf8"=>"✓", "answer"=>{"answer"=>"test", "user_id"=>"5", "question_id"=>"50"}, "commit"=>"Create Answer", "question_id"=>"50"}
+Unpermitted parameters: user_id, question_id
+  [1m[36mQuestion Load (0.2ms)[0m  [1mSELECT  "questions".* FROM "questions"  WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 50]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "answers" ("answer", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["answer", "test"], ["created_at", "2014-09-04 18:34:13.691226"], ["updated_at", "2014-09-04 18:34:13.691226"]]
+  [1m[36m (32.5ms)[0m  [1mCOMMIT[0m
+Completed 500 Internal Server Error in 39ms
+
+NoMethodError - undefined method `user_question' for #<AnswersController:0x007f8119987438>:
+   () Users/epicodus/Code/undertow/app/controllers/answers_controller.rb:15:in `create'
+  actionpack (4.1.5) lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+  actionpack (4.1.5) lib/abstract_controller/base.rb:189:in `process_action'
+  actionpack (4.1.5) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.1.5) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.1.5) lib/active_support/callbacks.rb:113:in `call'
+  activesupport (4.1.5) lib/active_support/callbacks.rb:229:in `block in halting'
+  activesupport (4.1.5) lib/active_support/callbacks.rb:229:in `block in halting'
+  activesupport (4.1.5) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.5) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.5) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.5) lib/active_support/callbacks.rb:86:in `run_callbacks'
+  actionpack (4.1.5) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.1.5) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.1.5) lib/action_controller/metal/instrumentation.rb:31:in `block in process_action'
+  activesupport (4.1.5) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.1.5) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.1.5) lib/active_support/notifications.rb:159:in `instrument'
+  actionpack (4.1.5) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.1.5) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.1.5) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.1.5) lib/abstract_controller/base.rb:136:in `process'
+  actionview (4.1.5) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.1.5) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.1.5) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.1.5) lib/action_controller/metal.rb:232:in `block in action'
+  actionpack (4.1.5) lib/action_dispatch/routing/route_set.rb:82:in `dispatch'
+  actionpack (4.1.5) lib/action_dispatch/routing/route_set.rb:50:in `call'
+  actionpack (4.1.5) lib/action_dispatch/journey/router.rb:71:in `block in call'
+  actionpack (4.1.5) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.1.5) lib/action_dispatch/routing/route_set.rb:678:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:35:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/flash.rb:254:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.1.5) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.1.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:621:in `call'
+  activerecord (4.1.5) lib/active_record/migration.rb:380:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.5) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.5) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  better_errors (2.0.0) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (2.0.0) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (2.0.0) lib/better_errors/middleware.rb:57:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.5) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.0.3) lib/quiet_assets.rb:23:in `call_with_quiet_assets'
+  actionpack (4.1.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.5) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.5) lib/rails/engine.rb:514:in `call'
+  railties (4.1.5) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+   () Users/epicodus/.rubies/ruby-2.1.0/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+   () Users/epicodus/.rubies/ruby-2.1.0/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+   () Users/epicodus/.rubies/ruby-2.1.0/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+
+Started GET "/" for 127.0.0.1 at 2014-09-04 11:34:40 -0700
+Processing by ApplicationController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+  Rendered application/index.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 85ms (Views: 83.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/questions" for 127.0.0.1 at 2014-09-04 11:34:43 -0700
+Processing by QuestionsController#index as HTML
+  [1m[36mQuestion Load (0.2ms)[0m  [1mSELECT "questions".* FROM "questions"   ORDER BY "questions"."created_at" ASC[0m
+  Rendered questions/index.html.erb within layouts/application (3.8ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+Completed 200 OK in 82ms (Views: 78.6ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/questions/49" for 127.0.0.1 at 2014-09-04 11:34:44 -0700
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"49"}
+  [1m[36mQuestion Load (0.1ms)[0m  [1mSELECT  "questions".* FROM "questions"  WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 49]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  [1m[35mAnswer Load (0.1ms)[0m  SELECT "answers".* FROM "answers"  WHERE "answers"."question_id" = $1  [["question_id", 49]]
+  Rendered questions/show.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 83ms (Views: 79.4ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/questions/49/answers/new" for 127.0.0.1 at 2014-09-04 11:34:46 -0700
+Processing by AnswersController#new as JS
+  Parameters: {"question_id"=>"49"}
+  [1m[36mQuestion Load (0.1ms)[0m  [1mSELECT  "questions".* FROM "questions"  WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 49]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+  Rendered answers/_answer_form.html.erb (3.8ms)
+  Rendered answers/new.js.erb (5.8ms)
+Completed 200 OK in 10ms (Views: 8.4ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/questions/49/answers" for 127.0.0.1 at 2014-09-04 11:34:48 -0700
+Processing by AnswersController#create as JS
+  Parameters: {"utf8"=>"✓", "answer"=>{"answer"=>"me neither.", "user_id"=>"5", "question_id"=>"49"}, "commit"=>"Create Answer", "question_id"=>"49"}
+Unpermitted parameters: user_id, question_id
+  [1m[36mQuestion Load (0.2ms)[0m  [1mSELECT  "questions".* FROM "questions"  WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 49]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "answers" ("answer", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["answer", "me neither."], ["created_at", "2014-09-04 18:34:48.903461"], ["updated_at", "2014-09-04 18:34:48.903461"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/users/4/questions/49
+Completed 302 Found in 4ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/users/4/questions/49" for 127.0.0.1 at 2014-09-04 11:34:48 -0700
+Processing by QuestionsController#show as JS
+  Parameters: {"user_id"=>"4", "id"=>"49"}
+  [1m[35mQuestion Load (0.1ms)[0m  SELECT  "questions".* FROM "questions"  WHERE "questions"."id" = $1 LIMIT 1  [["id", 49]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1mSELECT "answers".* FROM "answers"  WHERE "answers"."question_id" = $1[0m  [["question_id", 49]]
+  Rendered questions/show.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 79ms (Views: 77.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-09-04 11:39:14 -0700
+Processing by ApplicationController#index as HTML
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+  Rendered application/index.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 90ms (Views: 88.1ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/questions" for 127.0.0.1 at 2014-09-04 11:39:16 -0700
+Processing by QuestionsController#index as HTML
+  [1m[36mQuestion Load (0.2ms)[0m  [1mSELECT "questions".* FROM "questions"   ORDER BY "questions"."created_at" ASC[0m
+  Rendered questions/index.html.erb within layouts/application (3.8ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+Completed 200 OK in 80ms (Views: 77.1ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/questions/49" for 127.0.0.1 at 2014-09-04 11:39:17 -0700
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"49"}
+  [1m[36mQuestion Load (0.1ms)[0m  [1mSELECT  "questions".* FROM "questions"  WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 49]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  [1m[35mAnswer Load (0.1ms)[0m  SELECT "answers".* FROM "answers"  WHERE "answers"."question_id" = $1  [["question_id", 49]]
+  Rendered questions/show.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 84ms (Views: 80.4ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/questions/49/answers/new" for 127.0.0.1 at 2014-09-04 11:39:18 -0700
+Processing by AnswersController#new as JS
+  Parameters: {"question_id"=>"49"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1mSELECT  "questions".* FROM "questions"  WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 49]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+  Rendered answers/_answer_form.html.erb (3.7ms)
+  Rendered answers/new.js.erb (5.8ms)
+Completed 200 OK in 10ms (Views: 8.4ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/questions/49/answers" for 127.0.0.1 at 2014-09-04 11:39:22 -0700
+Processing by AnswersController#create as JS
+  Parameters: {"utf8"=>"✓", "answer"=>{"answer"=>"no one can!", "user_id"=>"5", "question_id"=>"49"}, "commit"=>"Create Answer", "question_id"=>"49"}
+Unpermitted parameters: user_id, question_id
+  [1m[36mQuestion Load (0.1ms)[0m  [1mSELECT  "questions".* FROM "questions"  WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 49]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "answers" ("answer", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["answer", "no one can!"], ["created_at", "2014-09-04 18:39:22.059637"], ["updated_at", "2014-09-04 18:39:22.059637"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  Rendered answers/create.js.erb (1.7ms)
+Completed 500 Internal Server Error in 6ms
+
+NoMethodError - undefined method `answer' for nil:NilClass:
+   () Users/epicodus/Code/undertow/app/views/answers/create.js.erb:3:in `_app_views_answers_create_js_erb___1574161709601928880_70096178712560'
+  actionview (4.1.5) lib/action_view/template.rb:145:in `block in render'
+  activesupport (4.1.5) lib/active_support/notifications.rb:161:in `instrument'
+  actionview (4.1.5) lib/action_view/template.rb:339:in `instrument'
+  actionview (4.1.5) lib/action_view/template.rb:143:in `render'
+  actionview (4.1.5) lib/action_view/renderer/template_renderer.rb:55:in `block (2 levels) in render_template'
+  actionview (4.1.5) lib/action_view/renderer/abstract_renderer.rb:38:in `block in instrument'
+  activesupport (4.1.5) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.1.5) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.1.5) lib/active_support/notifications.rb:159:in `instrument'
+  actionview (4.1.5) lib/action_view/renderer/abstract_renderer.rb:38:in `instrument'
+  actionview (4.1.5) lib/action_view/renderer/template_renderer.rb:54:in `block in render_template'
+  actionview (4.1.5) lib/action_view/renderer/template_renderer.rb:62:in `render_with_layout'
+  actionview (4.1.5) lib/action_view/renderer/template_renderer.rb:53:in `render_template'
+  actionview (4.1.5) lib/action_view/renderer/template_renderer.rb:17:in `render'
+  actionview (4.1.5) lib/action_view/renderer/renderer.rb:42:in `render_template'
+  actionview (4.1.5) lib/action_view/renderer/renderer.rb:23:in `render'
+  actionview (4.1.5) lib/action_view/rendering.rb:99:in `_render_template'
+  actionpack (4.1.5) lib/action_controller/metal/streaming.rb:217:in `_render_template'
+  actionview (4.1.5) lib/action_view/rendering.rb:82:in `render_to_body'
+  actionpack (4.1.5) lib/action_controller/metal/rendering.rb:32:in `render_to_body'
+  actionpack (4.1.5) lib/action_controller/metal/renderers.rb:32:in `render_to_body'
+  actionpack (4.1.5) lib/abstract_controller/rendering.rb:25:in `render'
+  actionpack (4.1.5) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.1.5) lib/action_controller/metal/instrumentation.rb:41:in `block (2 levels) in render'
+  activesupport (4.1.5) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+   () Users/epicodus/.rubies/ruby-2.1.0/lib/ruby/2.1.0/benchmark.rb:294:in `realtime'
+  activesupport (4.1.5) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.1.5) lib/action_controller/metal/instrumentation.rb:41:in `block in render'
+  actionpack (4.1.5) lib/action_controller/metal/instrumentation.rb:84:in `cleanup_view_runtime'
+  activerecord (4.1.5) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.1.5) lib/action_controller/metal/instrumentation.rb:40:in `render'
+  actionpack (4.1.5) lib/action_controller/metal/mime_responds.rb:258:in `respond_to'
+   () Users/epicodus/Code/undertow/app/controllers/answers_controller.rb:15:in `create'
+  actionpack (4.1.5) lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+  actionpack (4.1.5) lib/abstract_controller/base.rb:189:in `process_action'
+  actionpack (4.1.5) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.1.5) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.1.5) lib/active_support/callbacks.rb:113:in `call'
+  activesupport (4.1.5) lib/active_support/callbacks.rb:229:in `block in halting'
+  activesupport (4.1.5) lib/active_support/callbacks.rb:229:in `block in halting'
+  activesupport (4.1.5) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.5) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.5) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.5) lib/active_support/callbacks.rb:86:in `run_callbacks'
+  actionpack (4.1.5) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.1.5) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.1.5) lib/action_controller/metal/instrumentation.rb:31:in `block in process_action'
+  activesupport (4.1.5) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.1.5) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.1.5) lib/active_support/notifications.rb:159:in `instrument'
+  actionpack (4.1.5) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.1.5) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.1.5) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.1.5) lib/abstract_controller/base.rb:136:in `process'
+  actionview (4.1.5) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.1.5) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.1.5) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.1.5) lib/action_controller/metal.rb:232:in `block in action'
+  actionpack (4.1.5) lib/action_dispatch/routing/route_set.rb:82:in `dispatch'
+  actionpack (4.1.5) lib/action_dispatch/routing/route_set.rb:50:in `call'
+  actionpack (4.1.5) lib/action_dispatch/journey/router.rb:71:in `block in call'
+  actionpack (4.1.5) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.1.5) lib/action_dispatch/routing/route_set.rb:678:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:35:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/flash.rb:254:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.1.5) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.1.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:621:in `call'
+  activerecord (4.1.5) lib/active_record/migration.rb:380:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.5) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.5) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  better_errors (2.0.0) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (2.0.0) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (2.0.0) lib/better_errors/middleware.rb:57:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.5) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.0.3) lib/quiet_assets.rb:23:in `call_with_quiet_assets'
+  actionpack (4.1.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.5) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.5) lib/rails/engine.rb:514:in `call'
+  railties (4.1.5) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+   () Users/epicodus/.rubies/ruby-2.1.0/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+   () Users/epicodus/.rubies/ruby-2.1.0/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+   () Users/epicodus/.rubies/ruby-2.1.0/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+
+Started GET "/questions/49" for 127.0.0.1 at 2014-09-04 11:40:20 -0700
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"49"}
+  [1m[35mQuestion Load (0.1ms)[0m  SELECT  "questions".* FROM "questions"  WHERE "questions"."id" = $1 LIMIT 1  [["id", 49]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1mSELECT "answers".* FROM "answers"  WHERE "answers"."question_id" = $1[0m  [["question_id", 49]]
+  Rendered questions/show.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 89ms (Views: 77.2ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/questions/49/answers/new" for 127.0.0.1 at 2014-09-04 11:40:21 -0700
+Processing by AnswersController#new as JS
+  Parameters: {"question_id"=>"49"}
+  [1m[35mQuestion Load (0.1ms)[0m  SELECT  "questions".* FROM "questions"  WHERE "questions"."id" = $1 LIMIT 1  [["id", 49]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  Rendered answers/_answer_form.html.erb (4.2ms)
+  Rendered answers/new.js.erb (6.4ms)
+Completed 200 OK in 10ms (Views: 8.9ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/questions/49/answers" for 127.0.0.1 at 2014-09-04 11:40:23 -0700
+Processing by AnswersController#create as JS
+  Parameters: {"utf8"=>"✓", "answer"=>{"answer"=>"test", "user_id"=>"5", "question_id"=>"49"}, "commit"=>"Create Answer", "question_id"=>"49"}
+Unpermitted parameters: user_id, question_id
+  [1m[35mQuestion Load (0.1ms)[0m  SELECT  "questions".* FROM "questions"  WHERE "questions"."id" = $1 LIMIT 1  [["id", 49]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "answers" ("answer", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["answer", "test"], ["created_at", "2014-09-04 18:40:23.257625"], ["updated_at", "2014-09-04 18:40:23.257625"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  Rendered answers/create.js.erb (0.0ms)
+Completed 200 OK in 5ms (Views: 1.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/questions/49/answers/new" for 127.0.0.1 at 2014-09-04 11:40:25 -0700
+Processing by AnswersController#new as JS
+  Parameters: {"question_id"=>"49"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1mSELECT  "questions".* FROM "questions"  WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 49]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+  Rendered answers/_answer_form.html.erb (2.1ms)
+  Rendered answers/new.js.erb (4.2ms)
+Completed 200 OK in 8ms (Views: 6.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-09-04 11:40:27 -0700
+Processing by ApplicationController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  Rendered application/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 74ms (Views: 73.7ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/questions/49/answers" for 127.0.0.1 at 2014-09-04 11:40:56 -0700
+Processing by AnswersController#create as JS
+  Parameters: {"utf8"=>"✓", "answer"=>{"answer"=>"Jujubes topping donut macaroon tiramisu apple pie chocolate bar jelly topping. Applicake pastry liquorice chocolate candy canes. Cotton candy muffin tootsie roll sweet roll sweet roll sweet chocolate bar. Fruitcake cupcake liquorice candy canes macaroon. Bonbon macaroon halvah wafer. Sugar plum tart wafer ice cream jelly beans candy sweet topping cookie. Jelly sugar plum cheesecake jelly-o sweet tootsie roll tiramisu cupcake marshmallow. Sesame snaps chupa chups donut donut applicake unerdwear.com croissant bonbon biscuit. Lollipop sesame snaps liquorice danish gingerbread powder. Jelly-o pie lemon drops cake croissant fruitcake wafer ice cream. Croissant gummies oat cake donut croissant cotton candy sweet oat cake. Halvah chocolate chupa chups gummi bears tiramisu.\r\nSoufflé jelly-o donut. Fruitcake dessert cupcake. Lollipop biscuit sweet jelly beans macaroon cotton candy cupcake cake. Danish tiramisu danish croissant chocolate bar bonbon carrot cake. Oat cake pudding chocolate cake dragée lemon drops. Wafer muffin cupcake gummies croissant sweet. Icing sweet roll brownie danish macaroon gummi bears tootsie roll toffee. Toffee dessert carrot cake gummi bears carrot cake chocolate bar. Biscuit biscuit cake bonbon candy gingerbread. Dragée toffee wafer tiramisu cake. Candy canes croissant muffin cookie. Cookie croissant donut jujubes topping. Icing sesame snaps liquorice. Macaroon chocolate cake gingerbread.\r\nToffee donut unerdwear.com cupcake donut unerdwear.com carrot cake unerdwear.com. Gingerbread candy canes pudding pastry. Pastry chocolate bar gummies sweet roll toffee sweet macaroon. Pie jelly lemon drops brownie candy chocolate cake. Tiramisu croissant tiramisu bonbon jelly beans pie biscuit. Unerdwear.com chupa chups donut jelly-o. Brownie chupa chups dessert donut powder brownie cupcake candy biscuit. Powder sugar plum gingerbread candy canes fruitcake pie jelly beans dessert. Pie gummi bears marshmallow gingerbread dragée pastry topping. Pie cotton candy biscuit cotton candy pastry marshmallow tiramisu ice cream. Cheesecake donut ice cream soufflé carrot cake chocolate pie cake. Gummi bears pudding wafer. Carrot cake cheesecake marshmallow powder cotton candy bonbon sweet roll. Caramels unerdwear.com chocolate bar lollipop croissant.\r\nBrownie macaroon jelly muffin dragée. Soufflé cheesecake croissant cheesecake gummies toffee ice cream chocolate bar. Bonbon powder apple pie gummies gingerbread oat cake sesame snaps. Donut cake jelly beans sweet applicake unerdwear.com. Sweet cake jelly cake danish candy canes oat cake wafer lollipop. Jujubes soufflé lemon drops apple pie fruitcake tiramisu ice cream topping. Gummies oat cake soufflé icing dessert. Topping muffin brownie chocolate cake chupa chups bear claw sesame snaps. Bear claw dragée icing cupcake powder lemon drops powder liquorice. Jelly-o tart croissant cupcake chupa chups marshmallow. Oat cake gummies sweet roll sesame snaps jelly gingerbread croissant caramels. Topping fruitcake gummies tiramisu fruitcake dessert.\r\nSweet roll gummi bears candy canes macaroon marzipan. Chocolate bar lemon drops chocolate bar cake lollipop pie macaroon. Candy jelly bear claw. Pie sweet roll croissant pudding tart gingerbread candy lollipop. Brownie cotton candy ice cream candy chocolate bar pudding croissant icing brownie. Caramels jelly soufflé. Donut unerdwear.com gingerbread liquorice. Carrot cake sugar plum gummies lollipop tart. Cake oat cake powder. Jujubes cake jelly beans danish topping. Jujubes chocolate dessert muffin. Biscuit marzipan tart cupcake soufflé candy canes jelly biscuit.", "user_id"=>"5", "question_id"=>"49"}, "commit"=>"Create Answer", "question_id"=>"49"}
+Unpermitted parameters: user_id, question_id
+  [1m[35mQuestion Load (0.1ms)[0m  SELECT  "questions".* FROM "questions"  WHERE "questions"."id" = $1 LIMIT 1  [["id", 49]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "answers" ("answer", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["answer", "Jujubes topping donut macaroon tiramisu apple pie chocolate bar jelly topping. Applicake pastry liquorice chocolate candy canes. Cotton candy muffin tootsie roll sweet roll sweet roll sweet chocolate bar. Fruitcake cupcake liquorice candy canes macaroon. Bonbon macaroon halvah wafer. Sugar plum tart wafer ice cream jelly beans candy sweet topping cookie. Jelly sugar plum cheesecake jelly-o sweet tootsie roll tiramisu cupcake marshmallow. Sesame snaps chupa chups donut donut applicake unerdwear.com croissant bonbon biscuit. Lollipop sesame snaps liquorice danish gingerbread powder. Jelly-o pie lemon drops cake croissant fruitcake wafer ice cream. Croissant gummies oat cake donut croissant cotton candy sweet oat cake. Halvah chocolate chupa chups gummi bears tiramisu.\r\nSoufflé jelly-o donut. Fruitcake dessert cupcake. Lollipop biscuit sweet jelly beans macaroon cotton candy cupcake cake. Danish tiramisu danish croissant chocolate bar bonbon carrot cake. Oat cake pudding chocolate cake dragée lemon drops. Wafer muffin cupcake gummies croissant sweet. Icing sweet roll brownie danish macaroon gummi bears tootsie roll toffee. Toffee dessert carrot cake gummi bears carrot cake chocolate bar. Biscuit biscuit cake bonbon candy gingerbread. Dragée toffee wafer tiramisu cake. Candy canes croissant muffin cookie. Cookie croissant donut jujubes topping. Icing sesame snaps liquorice. Macaroon chocolate cake gingerbread.\r\nToffee donut unerdwear.com cupcake donut unerdwear.com carrot cake unerdwear.com. Gingerbread candy canes pudding pastry. Pastry chocolate bar gummies sweet roll toffee sweet macaroon. Pie jelly lemon drops brownie candy chocolate cake. Tiramisu croissant tiramisu bonbon jelly beans pie biscuit. Unerdwear.com chupa chups donut jelly-o. Brownie chupa chups dessert donut powder brownie cupcake candy biscuit. Powder sugar plum gingerbread candy canes fruitcake pie jelly beans dessert. Pie gummi bears marshmallow gingerbread dragée pastry topping. Pie cotton candy biscuit cotton candy pastry marshmallow tiramisu ice cream. Cheesecake donut ice cream soufflé carrot cake chocolate pie cake. Gummi bears pudding wafer. Carrot cake cheesecake marshmallow powder cotton candy bonbon sweet roll. Caramels unerdwear.com chocolate bar lollipop croissant.\r\nBrownie macaroon jelly muffin dragée. Soufflé cheesecake croissant cheesecake gummies toffee ice cream chocolate bar. Bonbon powder apple pie gummies gingerbread oat cake sesame snaps. Donut cake jelly beans sweet applicake unerdwear.com. Sweet cake jelly cake danish candy canes oat cake wafer lollipop. Jujubes soufflé lemon drops apple pie fruitcake tiramisu ice cream topping. Gummies oat cake soufflé icing dessert. Topping muffin brownie chocolate cake chupa chups bear claw sesame snaps. Bear claw dragée icing cupcake powder lemon drops powder liquorice. Jelly-o tart croissant cupcake chupa chups marshmallow. Oat cake gummies sweet roll sesame snaps jelly gingerbread croissant caramels. Topping fruitcake gummies tiramisu fruitcake dessert.\r\nSweet roll gummi bears candy canes macaroon marzipan. Chocolate bar lemon drops chocolate bar cake lollipop pie macaroon. Candy jelly bear claw. Pie sweet roll croissant pudding tart gingerbread candy lollipop. Brownie cotton candy ice cream candy chocolate bar pudding croissant icing brownie. Caramels jelly soufflé. Donut unerdwear.com gingerbread liquorice. Carrot cake sugar plum gummies lollipop tart. Cake oat cake powder. Jujubes cake jelly beans danish topping. Jujubes chocolate dessert muffin. Biscuit marzipan tart cupcake soufflé candy canes jelly biscuit."], ["created_at", "2014-09-04 18:40:56.482119"], ["updated_at", "2014-09-04 18:40:56.482119"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  Rendered answers/create.js.erb (0.1ms)
+Completed 200 OK in 5ms (Views: 1.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/questions/49" for 127.0.0.1 at 2014-09-04 11:41:02 -0700
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"49"}
+  [1m[36mQuestion Load (0.1ms)[0m  [1mSELECT  "questions".* FROM "questions"  WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 49]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  [1m[35mAnswer Load (0.1ms)[0m  SELECT "answers".* FROM "answers"  WHERE "answers"."question_id" = $1  [["question_id", 49]]
+  Rendered questions/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 82ms (Views: 80.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/questions/49/answers/new" for 127.0.0.1 at 2014-09-04 11:41:03 -0700
+Processing by AnswersController#new as JS
+  Parameters: {"question_id"=>"49"}
+  [1m[36mQuestion Load (0.1ms)[0m  [1mSELECT  "questions".* FROM "questions"  WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 49]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+  Rendered answers/_answer_form.html.erb (1.6ms)
+  Rendered answers/new.js.erb (3.7ms)
+Completed 200 OK in 8ms (Views: 6.4ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/questions/49/answers" for 127.0.0.1 at 2014-09-04 11:41:05 -0700
+Processing by AnswersController#create as JS
+  Parameters: {"utf8"=>"✓", "answer"=>{"answer"=>"Jujubes topping donut macaroon tiramisu apple pie chocolate bar jelly topping. Applicake pastry liquorice chocolate candy canes. Cotton candy muffin tootsie roll sweet roll sweet roll sweet chocolate bar. Fruitcake cupcake liquorice candy canes macaroon. Bonbon macaroon halvah wafer. Sugar plum tart wafer ice cream jelly beans candy sweet topping cookie. Jelly sugar plum cheesecake jelly-o sweet tootsie roll tiramisu cupcake marshmallow. Sesame snaps chupa chups donut donut applicake unerdwear.com croissant bonbon biscuit. Lollipop sesame snaps liquorice danish gingerbread powder. Jelly-o pie lemon drops cake croissant fruitcake wafer ice cream. Croissant gummies oat cake donut croissant cotton candy sweet oat cake. Halvah chocolate chupa chups gummi bears tiramisu.\r\nSoufflé jelly-o donut. Fruitcake dessert cupcake. Lollipop biscuit sweet jelly beans macaroon cotton candy cupcake cake. Danish tiramisu danish croissant chocolate bar bonbon carrot cake. Oat cake pudding chocolate cake dragée lemon drops. Wafer muffin cupcake gummies croissant sweet. Icing sweet roll brownie danish macaroon gummi bears tootsie roll toffee. Toffee dessert carrot cake gummi bears carrot cake chocolate bar. Biscuit biscuit cake bonbon candy gingerbread. Dragée toffee wafer tiramisu cake. Candy canes croissant muffin cookie. Cookie croissant donut jujubes topping. Icing sesame snaps liquorice. Macaroon chocolate cake gingerbread.\r\nToffee donut unerdwear.com cupcake donut unerdwear.com carrot cake unerdwear.com. Gingerbread candy canes pudding pastry. Pastry chocolate bar gummies sweet roll toffee sweet macaroon. Pie jelly lemon drops brownie candy chocolate cake. Tiramisu croissant tiramisu bonbon jelly beans pie biscuit. Unerdwear.com chupa chups donut jelly-o. Brownie chupa chups dessert donut powder brownie cupcake candy biscuit. Powder sugar plum gingerbread candy canes fruitcake pie jelly beans dessert. Pie gummi bears marshmallow gingerbread dragée pastry topping. Pie cotton candy biscuit cotton candy pastry marshmallow tiramisu ice cream. Cheesecake donut ice cream soufflé carrot cake chocolate pie cake. Gummi bears pudding wafer. Carrot cake cheesecake marshmallow powder cotton candy bonbon sweet roll. Caramels unerdwear.com chocolate bar lollipop croissant.\r\nBrownie macaroon jelly muffin dragée. Soufflé cheesecake croissant cheesecake gummies toffee ice cream chocolate bar. Bonbon powder apple pie gummies gingerbread oat cake sesame snaps. Donut cake jelly beans sweet applicake unerdwear.com. Sweet cake jelly cake danish candy canes oat cake wafer lollipop. Jujubes soufflé lemon drops apple pie fruitcake tiramisu ice cream topping. Gummies oat cake soufflé icing dessert. Topping muffin brownie chocolate cake chupa chups bear claw sesame snaps. Bear claw dragée icing cupcake powder lemon drops powder liquorice. Jelly-o tart croissant cupcake chupa chups marshmallow. Oat cake gummies sweet roll sesame snaps jelly gingerbread croissant caramels. Topping fruitcake gummies tiramisu fruitcake dessert.\r\nSweet roll gummi bears candy canes macaroon marzipan. Chocolate bar lemon drops chocolate bar cake lollipop pie macaroon. Candy jelly bear claw. Pie sweet roll croissant pudding tart gingerbread candy lollipop. Brownie cotton candy ice cream candy chocolate bar pudding croissant icing brownie. Caramels jelly soufflé. Donut unerdwear.com gingerbread liquorice. Carrot cake sugar plum gummies lollipop tart. Cake oat cake powder. Jujubes cake jelly beans danish topping. Jujubes chocolate dessert muffin. Biscuit marzipan tart cupcake soufflé candy canes jelly biscuit.", "user_id"=>"5", "question_id"=>"49"}, "commit"=>"Create Answer", "question_id"=>"49"}
+Unpermitted parameters: user_id, question_id
+  [1m[36mQuestion Load (0.1ms)[0m  [1mSELECT  "questions".* FROM "questions"  WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 49]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "answers" ("answer", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["answer", "Jujubes topping donut macaroon tiramisu apple pie chocolate bar jelly topping. Applicake pastry liquorice chocolate candy canes. Cotton candy muffin tootsie roll sweet roll sweet roll sweet chocolate bar. Fruitcake cupcake liquorice candy canes macaroon. Bonbon macaroon halvah wafer. Sugar plum tart wafer ice cream jelly beans candy sweet topping cookie. Jelly sugar plum cheesecake jelly-o sweet tootsie roll tiramisu cupcake marshmallow. Sesame snaps chupa chups donut donut applicake unerdwear.com croissant bonbon biscuit. Lollipop sesame snaps liquorice danish gingerbread powder. Jelly-o pie lemon drops cake croissant fruitcake wafer ice cream. Croissant gummies oat cake donut croissant cotton candy sweet oat cake. Halvah chocolate chupa chups gummi bears tiramisu.\r\nSoufflé jelly-o donut. Fruitcake dessert cupcake. Lollipop biscuit sweet jelly beans macaroon cotton candy cupcake cake. Danish tiramisu danish croissant chocolate bar bonbon carrot cake. Oat cake pudding chocolate cake dragée lemon drops. Wafer muffin cupcake gummies croissant sweet. Icing sweet roll brownie danish macaroon gummi bears tootsie roll toffee. Toffee dessert carrot cake gummi bears carrot cake chocolate bar. Biscuit biscuit cake bonbon candy gingerbread. Dragée toffee wafer tiramisu cake. Candy canes croissant muffin cookie. Cookie croissant donut jujubes topping. Icing sesame snaps liquorice. Macaroon chocolate cake gingerbread.\r\nToffee donut unerdwear.com cupcake donut unerdwear.com carrot cake unerdwear.com. Gingerbread candy canes pudding pastry. Pastry chocolate bar gummies sweet roll toffee sweet macaroon. Pie jelly lemon drops brownie candy chocolate cake. Tiramisu croissant tiramisu bonbon jelly beans pie biscuit. Unerdwear.com chupa chups donut jelly-o. Brownie chupa chups dessert donut powder brownie cupcake candy biscuit. Powder sugar plum gingerbread candy canes fruitcake pie jelly beans dessert. Pie gummi bears marshmallow gingerbread dragée pastry topping. Pie cotton candy biscuit cotton candy pastry marshmallow tiramisu ice cream. Cheesecake donut ice cream soufflé carrot cake chocolate pie cake. Gummi bears pudding wafer. Carrot cake cheesecake marshmallow powder cotton candy bonbon sweet roll. Caramels unerdwear.com chocolate bar lollipop croissant.\r\nBrownie macaroon jelly muffin dragée. Soufflé cheesecake croissant cheesecake gummies toffee ice cream chocolate bar. Bonbon powder apple pie gummies gingerbread oat cake sesame snaps. Donut cake jelly beans sweet applicake unerdwear.com. Sweet cake jelly cake danish candy canes oat cake wafer lollipop. Jujubes soufflé lemon drops apple pie fruitcake tiramisu ice cream topping. Gummies oat cake soufflé icing dessert. Topping muffin brownie chocolate cake chupa chups bear claw sesame snaps. Bear claw dragée icing cupcake powder lemon drops powder liquorice. Jelly-o tart croissant cupcake chupa chups marshmallow. Oat cake gummies sweet roll sesame snaps jelly gingerbread croissant caramels. Topping fruitcake gummies tiramisu fruitcake dessert.\r\nSweet roll gummi bears candy canes macaroon marzipan. Chocolate bar lemon drops chocolate bar cake lollipop pie macaroon. Candy jelly bear claw. Pie sweet roll croissant pudding tart gingerbread candy lollipop. Brownie cotton candy ice cream candy chocolate bar pudding croissant icing brownie. Caramels jelly soufflé. Donut unerdwear.com gingerbread liquorice. Carrot cake sugar plum gummies lollipop tart. Cake oat cake powder. Jujubes cake jelly beans danish topping. Jujubes chocolate dessert muffin. Biscuit marzipan tart cupcake soufflé candy canes jelly biscuit."], ["created_at", "2014-09-04 18:41:05.400978"], ["updated_at", "2014-09-04 18:41:05.400978"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  Rendered answers/create.js.erb (0.1ms)
+Completed 200 OK in 5ms (Views: 1.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/questions/49" for 127.0.0.1 at 2014-09-04 11:41:15 -0700
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"49"}
+  [1m[35mQuestion Load (0.1ms)[0m  SELECT  "questions".* FROM "questions"  WHERE "questions"."id" = $1 LIMIT 1  [["id", 49]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1mSELECT "answers".* FROM "answers"  WHERE "answers"."question_id" = $1[0m  [["question_id", 49]]
+  Rendered questions/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 77ms (Views: 75.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/questions/49" for 127.0.0.1 at 2014-09-04 11:42:30 -0700
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"49"}
+  [1m[35mQuestion Load (0.1ms)[0m  SELECT  "questions".* FROM "questions"  WHERE "questions"."id" = $1 LIMIT 1  [["id", 49]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1mSELECT "answers".* FROM "answers"  WHERE "answers"."question_id" = $1[0m  [["question_id", 49]]
+  Rendered questions/show.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 96ms (Views: 77.1ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/questions/49/answers/new" for 127.0.0.1 at 2014-09-04 11:42:32 -0700
+Processing by AnswersController#new as JS
+  Parameters: {"question_id"=>"49"}
+  [1m[35mQuestion Load (0.1ms)[0m  SELECT  "questions".* FROM "questions"  WHERE "questions"."id" = $1 LIMIT 1  [["id", 49]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  Rendered answers/_answer_form.html.erb (3.9ms)
+  Rendered answers/new.js.erb (5.9ms)
+Completed 200 OK in 10ms (Views: 8.3ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/questions/49/answers" for 127.0.0.1 at 2014-09-04 11:42:36 -0700
+Processing by AnswersController#create as JS
+  Parameters: {"utf8"=>"✓", "answer"=>{"answer"=>"I like cupcakes!", "user_id"=>"5", "question_id"=>"49"}, "commit"=>"Create Answer", "question_id"=>"49"}
+Unpermitted parameters: user_id, question_id
+  [1m[35mQuestion Load (0.1ms)[0m  SELECT  "questions".* FROM "questions"  WHERE "questions"."id" = $1 LIMIT 1  [["id", 49]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "answers" ("answer", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["answer", "I like cupcakes!"], ["created_at", "2014-09-04 18:42:36.130578"], ["updated_at", "2014-09-04 18:42:36.130578"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  Rendered answers/create.js.erb (0.0ms)
+Completed 200 OK in 4ms (Views: 1.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/questions/49" for 127.0.0.1 at 2014-09-04 11:43:34 -0700
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"49"}
+  [1m[36mQuestion Load (0.1ms)[0m  [1mSELECT  "questions".* FROM "questions"  WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 49]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  [1m[35mAnswer Load (0.1ms)[0m  SELECT "answers".* FROM "answers"  WHERE "answers"."question_id" = $1  [["question_id", 49]]
+  Rendered questions/show.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 95ms (Views: 82.6ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/questions/49/answers/new" for 127.0.0.1 at 2014-09-04 11:43:35 -0700
+Processing by AnswersController#new as JS
+  Parameters: {"question_id"=>"49"}
+  [1m[36mQuestion Load (0.1ms)[0m  [1mSELECT  "questions".* FROM "questions"  WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 49]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+  Rendered answers/_answer_form.html.erb (4.1ms)
+  Rendered answers/new.js.erb (6.2ms)
+Completed 200 OK in 10ms (Views: 8.7ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/questions/49/answers" for 127.0.0.1 at 2014-09-04 11:43:38 -0700
+Processing by AnswersController#create as JS
+  Parameters: {"utf8"=>"✓", "answer"=>{"answer"=>"I like cupcakes!", "user_id"=>"5", "question_id"=>"49"}, "commit"=>"Create Answer", "question_id"=>"49"}
+Unpermitted parameters: user_id, question_id
+  [1m[36mQuestion Load (0.1ms)[0m  [1mSELECT  "questions".* FROM "questions"  WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 49]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "answers" ("answer", "created_at", "question_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["answer", "I like cupcakes!"], ["created_at", "2014-09-04 18:43:38.744385"], ["question_id", 49], ["updated_at", "2014-09-04 18:43:38.744385"], ["user_id", 4]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  Rendered answers/create.js.erb (0.0ms)
+Completed 200 OK in 5ms (Views: 1.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/questions/49" for 127.0.0.1 at 2014-09-04 11:43:40 -0700
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"49"}
+  [1m[35mQuestion Load (0.1ms)[0m  SELECT  "questions".* FROM "questions"  WHERE "questions"."id" = $1 LIMIT 1  [["id", 49]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+  [1m[36mAnswer Load (0.2ms)[0m  [1mSELECT "answers".* FROM "answers"  WHERE "answers"."question_id" = $1[0m  [["question_id", 49]]
+  Rendered questions/show.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 77ms (Views: 75.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/questions/49/answers/new" for 127.0.0.1 at 2014-09-04 11:44:08 -0700
+Processing by AnswersController#new as JS
+  Parameters: {"question_id"=>"49"}
+  [1m[35mQuestion Load (0.1ms)[0m  SELECT  "questions".* FROM "questions"  WHERE "questions"."id" = $1 LIMIT 1  [["id", 49]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  Rendered answers/_answer_form.html.erb (1.8ms)
+  Rendered answers/new.js.erb (4.1ms)
+Completed 200 OK in 8ms (Views: 6.5ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/questions/49/answers" for 127.0.0.1 at 2014-09-04 11:44:19 -0700
+Processing by AnswersController#create as JS
+  Parameters: {"utf8"=>"✓", "answer"=>{"answer"=>"Well I HATE cupcakes. I'm gluten-free.", "user_id"=>"5", "question_id"=>"49"}, "commit"=>"Create Answer", "question_id"=>"49"}
+Unpermitted parameters: user_id, question_id
+  [1m[35mQuestion Load (0.1ms)[0m  SELECT  "questions".* FROM "questions"  WHERE "questions"."id" = $1 LIMIT 1  [["id", 49]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "answers" ("answer", "created_at", "question_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["answer", "Well I HATE cupcakes. I'm gluten-free."], ["created_at", "2014-09-04 18:44:19.158778"], ["question_id", 49], ["updated_at", "2014-09-04 18:44:19.158778"], ["user_id", 4]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  Rendered answers/create.js.erb (0.0ms)
+Completed 200 OK in 4ms (Views: 1.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/questions/49" for 127.0.0.1 at 2014-09-04 11:44:22 -0700
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"49"}
+  [1m[36mQuestion Load (0.1ms)[0m  [1mSELECT  "questions".* FROM "questions"  WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 49]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  [1m[35mAnswer Load (0.1ms)[0m  SELECT "answers".* FROM "answers"  WHERE "answers"."question_id" = $1  [["question_id", 49]]
+  Rendered questions/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 76ms (Views: 74.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/questions/49/answers/new" for 127.0.0.1 at 2014-09-04 11:44:26 -0700
+Processing by AnswersController#new as JS
+  Parameters: {"question_id"=>"49"}
+  [1m[36mQuestion Load (0.1ms)[0m  [1mSELECT  "questions".* FROM "questions"  WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 49]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+  Rendered answers/_answer_form.html.erb (1.8ms)
+  Rendered answers/new.js.erb (3.8ms)
+Completed 200 OK in 7ms (Views: 6.4ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/questions/49/answers" for 127.0.0.1 at 2014-09-04 11:44:30 -0700
+Processing by AnswersController#create as JS
+  Parameters: {"utf8"=>"✓", "answer"=>{"answer"=>"You are all dumber than a cupcake.", "user_id"=>"5", "question_id"=>"49"}, "commit"=>"Create Answer", "question_id"=>"49"}
+Unpermitted parameters: user_id, question_id
+  [1m[36mQuestion Load (0.1ms)[0m  [1mSELECT  "questions".* FROM "questions"  WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 49]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "answers" ("answer", "created_at", "question_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["answer", "You are all dumber than a cupcake."], ["created_at", "2014-09-04 18:44:30.965061"], ["question_id", 49], ["updated_at", "2014-09-04 18:44:30.965061"], ["user_id", 4]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  Rendered answers/create.js.erb (0.0ms)
+Completed 200 OK in 5ms (Views: 1.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users/5" for 127.0.0.1 at 2014-09-04 11:44:34 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  [1m[35mQuestion Load (0.1ms)[0m  SELECT "questions".* FROM "questions"  WHERE "questions"."user_id" = $1  [["user_id", 5]]
+  Rendered users/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 83ms (Views: 80.7ms | ActiveRecord: 0.3ms)

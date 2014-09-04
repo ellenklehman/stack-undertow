@@ -18,3 +18,12 @@
 <% if current_user %>
   <%= link_to "Answer this Question", new_question_answer_path(@question, @answer), class: "btn btn-success", remote: true, id: "answer-button" unless current_user.id == @question.user_id %>
 <% end %>
+
+
+<div id = "answer-display">
+  <ul id = "answer-list">
+    <% @question.answers.each do |answer| %>
+      <li><%= answer.answer %> </li>
+    <% end %>
+  </ul>
+</div>
